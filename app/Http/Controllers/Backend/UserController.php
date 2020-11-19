@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\DB;
 class UserController
 {
     public function index(){
-        $users = User::paginate(5);
+        $users = User::orderBy('updated_at','desc')->paginate(5);
 //        $users = DB::table('users')->get();
 //        dd($users);
         return view('backend.users.index',[

@@ -34,7 +34,7 @@ Route::get('/', function () {
 //});
 Route::prefix('user')->group(function () {
     Route::get('/',
-        [\App\Http\Controllers\Backend\UserController::class,'index'])->name('user.index');
+        [\App\Http\Controllers\Backend\UserController::class,'index'])->name('user.index')->middleware(['can:admin-user']);
     Route::get('info',
         [\App\Http\Controllers\Backend\UserController::class,'test'])->name('user.info');
     Route::get('create',

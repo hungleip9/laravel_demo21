@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Validator;
 class ProductsController extends Controller
 {
     public function index(){
-        $products = Product::paginate(5);
+        $products = Product::orderBy('updated_at')->paginate(5);
 //        dd($products);
         return view('backend.products.index',[
             'products' => $products
