@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Validator;
 
 
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
     public function index(){
-        $products = Product::orderBy('updated_at')->paginate(5);
+        $products = Product::orderBy('updated_at','desc')->paginate(5);
 //        dd($products);
         return view('backend.products.index',[
             'products' => $products
@@ -54,18 +54,22 @@ class ProductsController extends Controller
         $product->sale_price = $request->get('sale_price');
         $product->content = $request->get('content');
         $product->status = $request->get('status');
+
+        //avatar
+        $file = $request->file('image');
+        $path = Storage::disk('public')
+            ->putFileAs('avatar', $file,$file->getClientOriginalName());
+        $product->avatar = $path;
+        //end avatar
+
         $product->user_id = Auth::user()->id;
 
         $product->save();
+        //images
         if ($request->hasFile('images')){
             $files = $request->file('images');
             foreach ($files as $file){
-                //cach 2 khong khuyen dung
-//            $name = $file->getClientOriginalName();
-//            $file->move('avatars',$name);
-//            $path = 'avatars'.$name;
                 //cach 1 khuyen dung
-
                 $path = Storage::disk('public')
                     ->putFileAs('image', $file,$file->getClientOriginalName());
 
@@ -76,12 +80,23 @@ class ProductsController extends Controller
                 $image->save();
             }
 
+        }else{
+            return redirect(route('backend.product.create'));
+        }
+        //end image
+
+
+
+        //session
+        if ($product->save()){
+            $request->session()->flash('success','Tao mới thành công');
 
         }else{
-            return redirect(route('products.create'));
+            $request->session()->flash('error','Tao mới không thành công');
         }
+        //end session
 
-        return redirect()->route('products.index');
+        return redirect()->route('backend.product.index');
     }
     public function edit(Product $product){
 
@@ -92,21 +107,11 @@ class ProductsController extends Controller
 //        }else{
 //            dd('ko');
 //        }
-
-
         $categories = Category::get();
-        $user = Auth::user();
-        if (Gate::allows('update-product', $product)){
             return view('backend.products.edit',[
                 'product' => $product,
                 'categories' => $categories
             ]);
-        }else{
-            dd('khong');
-        }
-
-
-
     }
     public function update(StoreProductRequest $request,$id){
         //lay du lieu tu form
@@ -117,6 +122,7 @@ class ProductsController extends Controller
         $sale_price = $request->get('sale_price');
         $content = $request->get('content');
         $status = $request->get('status');
+
         //upload du lieu
         $product = Product::find($id);
         $product->name = $name;
@@ -126,14 +132,59 @@ class ProductsController extends Controller
         $product->sale_price = $sale_price;
         $product->content = $content;
         $product->status = $status;
+        //avatar
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $path = Storage::disk('public')
+                ->putFileAs('avatar', $file,$file->getClientOriginalName());
+            $product->avatar = $path;
+        }
+
+        //end avatar
         $product->save();
-        return redirect(route('products.index'));
+        //images
+        if ($request->hasFile('images')){
+            $files = $request->file('images');
+            foreach ($files as $file){
+                //cach 1 khuyen dung
+                $path = Storage::disk('public')
+                    ->putFileAs('image', $file,$file->getClientOriginalName());
+
+                $image = new Image();
+                $image->name = $file->getClientOriginalName();
+                $image->path =$path;
+                $image->product_id = $product->id;
+                $image->save();
+            }
+
+        }else{
+            return redirect(route('backend.product.create'));
+        }
+        //end image
+        if ($product->save()){
+            $request->session()->flash('success','Chỉnh sửa thành công');
+
+        }else{
+            $request->session()->flash('error','Tao mới không thành công');
+        }
+        return redirect(route('backend.product.index'));
     }
     public function destroy($id)
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect()->route('products.index');
+        return redirect()->route('backend.product.index');
+    }
+    public function detail($id){
+        $product = Product::find($id);
+        $images = $product->images;
+        $categories = Category::all();
+        return view('frontend.shop-detail',[
+            'product' => $product,
+            'categories' => $categories,
+            'images' => $images
+        ]);
+
     }
 
 }

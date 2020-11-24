@@ -91,5 +91,11 @@
 <script src="/backend/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/backend/dist/js/demo.js"></script>
+{{--format tiền tệ--}}
+<script src="/backend/dist/js/simple.money.format.js"></script>
+<script type="text/javascript">
+    $('.money').simpleMoneyFormat();
+</script>
+{{--end format tiền tệ--}}
 </body>
 </html>

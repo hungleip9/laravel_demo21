@@ -30,7 +30,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('user.upload',$user->id)}}" method="post">
+                    <form role="form" action="{{route('backend.user.upload',$user->id)}}" method="post">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
@@ -52,8 +52,8 @@
                                 <label>Quyền</label>
                                 <select class="form-control select2" style="width: 100%;" name="role">
 
-                                    <option value="2">Admin</option>
-                                    <option value="1">User</option>
+                                    <option value="2">User</option>
+                                    <option value="1">Admin</option>
                                 </select>
                             </div>
                             @error('role')
@@ -64,7 +64,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <a href="{{ route('user.index') }}" class="btn btn-default">Huỷ bỏ</a>
+                            <a href="{{ route('backend.user.index') }}" class="btn btn-default">Huỷ bỏ</a>
                             <button type="submit" class="btn btn-success">Tạo mới</button>
                         </div>
 

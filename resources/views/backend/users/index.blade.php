@@ -4,6 +4,13 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Danh sách người dùng</h1>
+                {{--                bao loi session--}}
+                @if(session()->has('success'))
+                    <span style="color: white;background-color: green;">{{session()->get('success')}}</span>
+                @else
+                    <span style="color: white;background-color: red;">{{session()->get('error')}}</span>
+                @endif
+                {{--                ket thuc bao loi session--}}
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -56,7 +63,7 @@
                             <tr>
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
-                                <td><a href="{{route('user.showProducts',$user->id)}}">Show</a></td>
+                                <td><a href="{{route('backend.user.showProduct',$user->id)}}">Show</a></td>
                                 <td>{{$user->email}}</td>
 
                                 @if($user->role==2)
@@ -65,10 +72,10 @@
                                     <td>Admin</td>
                                 @endif
                                 <td>
-                                    <a href="{{route('user.edit',$user->id)}}" class="btn btn-success">Edit</a>
+                                    <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{route('user.destroy',$user->id)}}" method="POST">
+                                    <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 

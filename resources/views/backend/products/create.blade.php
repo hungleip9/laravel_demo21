@@ -30,7 +30,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('backend.product.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -69,7 +69,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Giá gốc</label>
-                                        <input type="text" class="form-control" placeholder="Điền giá khuyến mại" name="origin_price">
+                                        <input type="text" class="form-control money" placeholder="Điền giá khuyến mại" name="origin_price">
                                         @error('origin_price')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -79,7 +79,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Giá khuyến mãi</label>
-                                        <input type="text" class="form-control" placeholder="Điền giá gốc" name="sale_price">
+                                        <input type="text" class="form-control money" placeholder="Điền giá gốc" name="sale_price">
                                         @error('sale_price')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -95,7 +95,22 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Hình ảnh sản phẩm</label>
+                                <label for="exampleInputFile">Avatar</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
+                                        <label class="custom-file-label" for="#exampleInputFile">Upload ảnh</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="">Upload</span>
+                                    </div>
+                                </div>
+                                @error('images[]')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Hình ảnh mô tả</label>
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="exampleInputFile" name="images[]" multiple>
@@ -125,7 +140,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <a href="{{ route('products.index') }}" class="btn btn-default">Huỷ bỏ</a>
+                            <a href="{{ route('backend.product.index') }}" class="btn btn-default">Huỷ bỏ</a>
                             <button type="submit" class="btn btn-success">Tạo mới</button>
                         </div>
 

@@ -24,10 +24,10 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
-                    <a href="{{route('oniichan.index')}}" class="nav-link active">
+                    <a href="{{route('backend.dashboard')}}" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Dashboard
+                            Onii Chan Shop
                         </p>
                     </a>
 
@@ -43,14 +43,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('products.create')}}" class="nav-link">
+                            <a href="{{route('backend.product.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tạo mới</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('products.index')}}" class="nav-link">
+                            <a href="{{route('backend.product.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -68,14 +68,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('categories.create')}}" class="nav-link">
+                            <a href="{{route('backend.categories.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tạo mới</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('categories.index')}}" class="nav-link">
+                            <a href="{{route('backend.categories.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -92,13 +92,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('user.create')}}" class="nav-link">
+                            <a href="{{route('backend.user.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tạo mới</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user.index')}}" class="nav-link">
+                            <a href="{{route('backend.user.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -115,7 +115,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('user.create')}}" class="nav-link">
+                            <a href="{{route('backend.user.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tạo mới</p>
                             </a>

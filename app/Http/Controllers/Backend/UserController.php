@@ -42,11 +42,20 @@ class UserController
         // Tạo dữ liệu mới
         $user = new User();
         $user->name = $name;
-        $user->role = 1;
+        $user->role = 2;
         $user->email = $email;
         $user->password = $password;
         $user->save();
-        return redirect()->route('user.index');
+        //session
+        if ($user->save()){
+            $request->session()->flash('success','Tao mới thành công');
+
+        }else{
+            $request->session()->flash('error','Tao mới không thành công');
+        }
+        //end session
+        return redirect()->route('backend.user.index');
+
     }
     public function showProduct($id){
         $user = User::find($id);
@@ -115,14 +124,14 @@ class UserController
         $user->email = $email;
         $user->role = $role;
         $user->save();
-        return redirect(route('user.index'));
+        return redirect(route('backend.user.index'));
     }
     public function destroy($id)
     {
         $user = User::find($id);
 
             $user->delete();
-            return redirect()->route('user.index');
+            return redirect()->route('backend.user.index');
 
 
     }

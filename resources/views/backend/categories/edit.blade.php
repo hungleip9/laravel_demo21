@@ -30,13 +30,13 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('categories.upload',$category->id)}}" method="post">
+                    <form role="form" action="{{route('backend.categories.upload',$category->id)}}" method="post">
                         @csrf
                         @method('put')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên danh mục</label>
-                                <input type="text" class="form-control" id="" placeholder="{{$category->name}}" name="name">
+                                <input type="text" class="form-control" id="" value="{{$category->name}}" name="name">
                                 @error('name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -46,7 +46,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <a href="{{ route('categories.index') }}" class="btn btn-default">Huỷ bỏ</a>
+                            <a href="{{ route('backend.categories.index') }}" class="btn btn-default">Huỷ bỏ</a>
                             <button type="submit" class="btn btn-success">Tạo mới</button>
                         </div>
 

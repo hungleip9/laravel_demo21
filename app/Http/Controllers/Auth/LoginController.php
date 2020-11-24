@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -40,6 +41,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
     /**
      * Show the application's login form.
      *
@@ -52,10 +55,19 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if($user->role == 1){
-            return redirect(route('user.index'));
-        }else{
-            return redirect(route('oniichan.index'));
+
+    }
+
+    public function login(Request $request)
+    {
+        $email = $request->get('email');
+        $password = $request->get('password');
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            if(Auth::user()->role == 1){
+                return redirect(route('backend.user.index'));
+            }else{
+                return redirect(route('backend.dashboard'));
+            }
         }
     }
     public function logout(Request $request)
@@ -72,7 +84,7 @@ class LoginController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
-            : redirect('home/test');
+            : redirect(route('backend.dashboard'));
     }
 
 }

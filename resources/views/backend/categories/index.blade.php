@@ -43,8 +43,8 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Tên danh muc</th>
-                                <th>Show san pham</th>
+                                <th>Tên danh mục</th>
+                                <th>Show sản phẩm</th>
                                 <th>Chỉnh sửa</th>
                                 <th>Xóa</th>
                             </tr>
@@ -55,12 +55,12 @@
 
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
-                                <td><a href="{{route('categories.show',$category->id)}}">Show</a></td>
+                                <td><a href="{{route('backend.categories.show',$category->id)}}">Show</a></td>
                                 <td>
-                                    <a href="{{route('categories.edit',$category->id)}}" class="btn btn-success">Edit</a>
+                                    <a href="{{route('backend.categories.edit',$category->id)}}" class="btn btn-success">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{route('categories.destroy',$category->id)}}" method="POST">
+                                    <form action="{{route('backend.categories.destroy',$category->id)}}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 

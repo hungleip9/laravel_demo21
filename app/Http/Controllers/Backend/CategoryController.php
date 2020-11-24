@@ -38,7 +38,7 @@ class CategoryController extends Controller
         $category->parent_id =$request->get('parent_id');
         $category->depth =$request->get('depth');
         $category->save();
-        return redirect()->route('categories.index');
+        return redirect()->route('backend.categories.index');
     }
     public function edit($id){
         $category = Category::find($id);
@@ -53,12 +53,21 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->name =$name;
         $category->save();
-        return redirect(route('categories.index'));
+        return redirect(route('backend.categories.index'));
     }
+//    public function detail($id){
+//        $category = Category::find($id);
+//        $products = $category->products;
+//        return view('frontend.shop-detail',[
+//            'category' => $category,
+//            'products' => $products
+//        ]);
+//    }
     public function destroy($id)
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('backend.categories.index');
     }
+
 }

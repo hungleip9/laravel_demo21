@@ -30,7 +30,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('categories.store')}}" method="post">
+                    <form role="form" action="{{route('backend.categories.store')}}" method="post">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
@@ -61,7 +61,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <a href="{{ route('categories.index') }}" class="btn btn-default">Huỷ bỏ</a>
+                            <a href="{{ route('backend.categories.index') }}" class="btn btn-default">Huỷ bỏ</a>
                             <button type="submit" class="btn btn-success">Tạo mới</button>
                         </div>
 

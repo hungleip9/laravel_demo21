@@ -5,6 +5,13 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Danh sách sản phẩm</h1>
+{{--                bao loi session--}}
+                @if(session()->has('success'))
+                    <span style="color: green">{{session()->get('success')}}</span>
+                @else
+                    <span style="color: red">{{session()->get('error')}}</span>
+                @endif
+{{--                ket thuc bao loi session--}}
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -70,15 +77,15 @@
 
                                 </td>
 
-                                <td><a href="{{route('products.show',$product->id)}}">Show</a></td>
-                                @can('update', $product)
+                                <td><a href="{{route('backend.product.show',$product->id)}}">Show</a></td>
+{{--                                @can('update', $product)--}}
                                 <td>
-                                    <a href="{{route('products.edit',$product->id)}}" class="btn btn-success">Chỉnh sửa</a>
+                                    <a href="{{route('backend.product.edit',$product->id)}}" class="btn btn-success">Chỉnh sửa</a>
                                 </td>
 
 
                                 <td>
-                                    <form action="{{route('products.destroy',$product->id)}}" method="POST">
+                                    <form action="{{route('backend.product.destroy',$product->id)}}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
@@ -87,7 +94,7 @@
                                         </button>
                                     </form>
                                 </td>
-                                @endcan
+{{--                                @endcan--}}
                             </tr>
                             @endforeach
                             </tbody>

@@ -27,7 +27,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" method="POST" action="{{route('user.store')}}">
+                    <form role="form" method="POST" action="{{route('backend.user.store')}}">
                         {{ csrf_field() }}
                         <div class="card-body">
                             <div class="form-group">
@@ -57,7 +57,7 @@
 
                         <div class="card-footer">
                             <button type="submit" class="btn btn-default">Huỷ bỏ</button>
-                            <button type="submit" class="btn btn-sucess">Tạo mới</button>
+                            <button type="submit" class="btn btn-success">Tạo mới</button>
                         </div>
                     </form>
                 </div>

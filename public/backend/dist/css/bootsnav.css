@@ -38,7 +38,7 @@ nav.navbar.bootsnav{
     background-color: red;
     border: none;
     z-index: 9;
-    height: 150px;
+    height: 100px;
 }
 
 nav.navbar.bootsnav ul.nav > li > a{
