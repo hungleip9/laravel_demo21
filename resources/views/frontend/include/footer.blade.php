@@ -32,9 +32,9 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
                         <h3>Gửi bình luận</h3>
-                        <form class="newsletter-box">
+                        <form class="newsletter-box" action="" method="POST">
                             <div class="form-group">
-                                <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                <input class="" type="text" name="comment" placeholder="Comment" />
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <button class="btn hvr-hover" type="submit">Submit</button>

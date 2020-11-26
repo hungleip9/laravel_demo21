@@ -135,6 +135,13 @@ class UserController
         $user->save();
         return redirect(route('backend.user.index'));
     }
+    public function showComment($id){
+        $user = User::find($id);
+        $comments = $user->comments;
+        return view('backend.users.showComment',[
+            'comments' => $comments
+        ]);
+    }
     public function destroy($id)
     {
         $user = User::find($id);

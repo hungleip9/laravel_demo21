@@ -22,6 +22,7 @@ class DashboardController extends Controller
             'com' => $com,
             'images' => $images,
             'prs' => $prs
+
         ]);
     }
 }

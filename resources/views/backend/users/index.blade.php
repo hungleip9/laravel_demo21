@@ -51,7 +51,7 @@
                                 <th>Tên</th>
                                 <th>Sản Phẩm</th>
                                 <th>Email</th>
-
+                                <th>Show Comment</th>
                                 <th>Quyền</th>
                                 <th>Sửa</th>
                                 <th>Xóa</th>
@@ -65,7 +65,7 @@
                                 <td>{{$user->name}}</td>
                                 <td><a href="{{route('backend.user.showProduct',$user->id)}}">Show</a></td>
                                 <td>{{$user->email}}</td>
-
+                                <td><a href="{{route('backend.user.showComment',$user->id)}}">Show</a></td>
                                 @if($user->role==2)
                                     <td>User</td>
                                 @elseif($user->role==1)
