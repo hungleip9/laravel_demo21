@@ -46,6 +46,9 @@ Route::prefix('oniichan')->group(function (){
 Route::get('/','Backend\DashboardController@index')->name('backend.dashboard');
 Route::get('/products/detail/{id}','Backend\ProductController@detail')->name('backend.product.detail');
 Route::get('/products/like/{id}','Backend\ProductController@like')->name('backend.product.like');
+Route::get('carts/add/{id}','Backend\CartController@add')->name('backend.cart.add');
+Route::get('carts/','Backend\CartController@index')->name('backend.cart.index');
+Route::get('carts/remove/{id}','Backend\CartController@remove')->name('backend.cart.remove');
 Route::group([
     'namespace' => 'Backend',
     'prefix' => 'admin',
@@ -91,6 +94,10 @@ Route::group([
         Route::get('/','CommentController@index')->name('backend.comments.index');
         Route::get('postcomment/{id}','CommentController@postcomment')->name('backend.comments.postcomment');
 
+    });
+    //quan ly ro hang
+    Route::group(['prefix' => 'carts'],function (){
+        Route::get('/','CartController@index')->name('backend.cart.index');
     });
 
 });

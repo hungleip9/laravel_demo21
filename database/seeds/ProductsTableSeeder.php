@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->truncate();
-        for ($i=1;$i<=10;$i++){
+        for ($i=1;$i<=8;$i++){
 
 
             DB::table('products')->insert(

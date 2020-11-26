@@ -135,7 +135,7 @@
                                     <li><a href="{{route('backend.product.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="{{route('backend.product.like',$product->id)}}" data-toggle="tooltip" data-placement="right" title="Like"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Thêm vào giỏ hàng</a>
+                                <a class="cart" href="{{route('backend.cart.add',$product->id)}}">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                         <div class="why-text">

@@ -74,7 +74,7 @@
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
 								<a class="btn hvr-hover" data-fancybox-close="" href="#"> Mua ngay</a>
-								<a class="btn hvr-hover" data-fancybox-close="" href="#"> Thêm vào rỏ hàng</a>
+								<a class="btn hvr-hover" data-fancybox-close="" href="{{route('backend.cart.add',$product->id)}}"> Thêm vào rỏ hàng</a>
                                 <a class="btn hvr-hover" href="{{route('backend.product.like',$product->id)}}"><i class="fas fa-heart"></i> Yêu thích</a>
 							</div>
 						</div>
