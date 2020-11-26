@@ -9,13 +9,21 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class CategoryController extends Controller
 {
     public function index(){
         $categories = Category::paginate(5);
+        //cache categories number
+        $categories_number = Cache::remember('categories_number',5,function (){
+            $categories_number = Category::count();
+            return $categories_number;
+        });
+        //end cache categories number
         return view('backend.categories.index',[
-            'categories' => $categories
+            'categories' => $categories,
+            'categories_number' => $categories_number
         ]);
     }
     public function showProducts($id){
@@ -34,7 +42,7 @@ class CategoryController extends Controller
     public function  store(StoreCategoryRequest $request){
         $category = new Category();
         $category->name =$request->get('name');
-        $category->slug = \Illuminate\Support\Str::slug($request->get('slug'));
+//        $category->slug = \Illuminate\Support\Str::slug($request->get('slug'));
         $category->parent_id =$request->get('parent_id');
         $category->depth =$request->get('depth');
         $category->save();

@@ -69,7 +69,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Giá gốc</label>
-                                        <input type="text" class="form-control money" placeholder="Điền giá khuyến mại" name="origin_price">
+                                        <input type="text" class="form-control" placeholder="Điền giá khuyến mại" name="origin_price">
                                         @error('origin_price')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -79,7 +79,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Giá khuyến mãi</label>
-                                        <input type="text" class="form-control money" placeholder="Điền giá gốc" name="sale_price">
+                                        <input type="text" class="form-control" placeholder="Điền giá gốc" name="sale_price">
                                         @error('sale_price')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror

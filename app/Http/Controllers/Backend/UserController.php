@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Cache;
 use App\Models\User_info;
 use App\Models\UserInfo;
 use Illuminate\Http\Request;
@@ -22,8 +22,17 @@ class UserController
         $users = User::orderBy('updated_at','desc')->paginate(5);
 //        $users = DB::table('users')->get();
 //        dd($users);
+
+        // Cache user number
+            $user_number = Cache::remember('user_number',5,function (){
+                $user_number = User::count();
+                return $user_number;
+            });
+        // end Cache user number
+
         return view('backend.users.index',[
-            'users' => $users
+            'users' => $users,
+            'user_number' => $user_number
         ]);
 
     }

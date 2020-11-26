@@ -60,14 +60,17 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $email = $request->get('email');
+        $name = $request->get('name');
         $password = $request->get('password');
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (Auth::attempt(['name' => $name, 'password' => $password])) {
             if(Auth::user()->role == 1){
                 return redirect(route('backend.user.index'));
             }else{
                 return redirect(route('backend.dashboard'));
             }
+        }else{
+            $request->session()->flash('error','Tài khoản hoặc mật khẩu không đúng');
+            return redirect(route('login'));
         }
     }
     public function logout(Request $request)

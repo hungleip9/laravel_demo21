@@ -13,6 +13,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,8 +24,14 @@ class ProductController extends Controller
     public function index(){
         $products = Product::orderBy('updated_at','desc')->paginate(5);
 //        dd($products);
+        //tao cache dem products
+        $products_number = Cache::remember('products_number',5,function (){
+            $products_number = Product::count();
+            return $products_number;
+        });
         return view('backend.products.index',[
-            'products' => $products
+            'products' => $products,
+            'products_number' => $products_number
         ]);
 
     }
@@ -157,8 +164,6 @@ class ProductController extends Controller
                 $image->save();
             }
 
-        }else{
-            return redirect(route('backend.product.create'));
         }
         //end image
         if ($product->save()){
@@ -176,15 +181,23 @@ class ProductController extends Controller
         return redirect()->route('backend.product.index');
     }
     public function detail($id){
+        $products = Product::all();
         $product = Product::find($id);
-        $images = $product->images;
+        $images = $product->image;
         $categories = Category::all();
         return view('frontend.shop-detail',[
+            'products' => $products,
             'product' => $product,
             'categories' => $categories,
             'images' => $images
         ]);
 
+    }
+    public function like($id){
+        $product = Product::find($id);
+        $product->like =$product->like + 1;
+        $product->save();
+        return redirect()->route('backend.dashboard');
     }
 
 }

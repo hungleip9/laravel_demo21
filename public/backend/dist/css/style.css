@@ -33,7 +33,7 @@
     SKELETON
 -------------------------------------------------------------------*/
  body {
-     color: #666666;
+     color: #f9f9f9f2;
      font-size: 15px;
      font-family: 'Dosis', sans-serif;
      line-height: 1.80857;
@@ -2477,7 +2477,7 @@ title{
 }
  .single-product-slider .carousel-control-prev {
      bottom: auto;
-     background: #111111;
+     background: #ffffff;
      width: 6%;
      padding: 10px 0;
      background-image: none;
@@ -2485,7 +2485,7 @@ title{
 }
  .single-product-slider .carousel-control-next {
      bottom: auto;
-     background: #111111;
+     background: #ffffff;
      width: 6%;
      padding: 10px 0;
      background-image: none;
@@ -2642,7 +2642,7 @@ li.search{
     font-family: 'Arial';
 }
 img.img-fluid {
-    border-radius: 30px 30px 0 0;
+
 }
 
 .special-menu button{

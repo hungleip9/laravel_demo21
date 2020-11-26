@@ -101,7 +101,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    @can('admin-user')
+                        <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Admin</a></li>
+                    @endcan
+
                     <li class="nav-item active"><a class="nav-link" href="/backend/dist/index.html">Trang Chủ</a></li>
+
 
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh Mục</a>
@@ -130,11 +135,7 @@
                             <p> Giỏ Hàng</p>
                         </a>
                     </li>
-                    @can('admin-user')
-                        <li class="nav-item">
-                            <a href="{{route('backend.user.index')}}" class="nav-link">Admin</a>
-                        </li>
-                    @endcan
+
                 </ul>
             </div>
             <!-- End Atribute Navigation -->

@@ -44,6 +44,8 @@ Route::prefix('oniichan')->group(function (){
 });
 //trang chu dashboard
 Route::get('/','Backend\DashboardController@index')->name('backend.dashboard');
+Route::get('/products/detail/{id}','Backend\ProductController@detail')->name('backend.product.detail');
+Route::get('/products/like/{id}','Backend\ProductController@like')->name('backend.product.like');
 Route::group([
     'namespace' => 'Backend',
     'prefix' => 'admin',
@@ -59,7 +61,6 @@ Route::group([
         Route::put('/{id}/update','ProductController@update')->name('backend.product.update');
         Route::delete('/{id}/destroy','ProductController@destroy')->name('backend.product.destroy');
         Route::get('/{id}/show','ProductController@showImages')->name('backend.product.show');
-        Route::get('/detail/{id}','ProductController@detail')->name('backend.product.detail');
     });
     //quan ly user
     Route::group(['prefix' => 'user'],function (){

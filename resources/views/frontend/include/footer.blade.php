@@ -1,3 +1,19 @@
+<div class="instagram-box">
+    <div class="main-instagram owl-carousel owl-theme">
+        @foreach($images as $image)
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img style="height: 300px!important;" src="/storage/{{$image->path}}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+
+
+    </div>
+</div>
 <!-- Start Footer  -->
 <footer>
     <div class="footer-main">

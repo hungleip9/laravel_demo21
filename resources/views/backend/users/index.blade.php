@@ -30,7 +30,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Danh sách người dùng</h3>
+                        <h3 class="card-title">Số lượng người dùng <a href="#" style="color: red!important;"> {{$user_number}}</a></h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">

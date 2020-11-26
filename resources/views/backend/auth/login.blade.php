@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>OniiChan_Shop | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,32 +21,32 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>OniiChan</b>Shop</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Đăng Nhập</p>
 
             <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="input-group mb-3">
 
-                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    <input type="text" class="form-control" placeholder="Tên Đăng Nhập" name="name">
 
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    @error('email')
+                    @error('name')
                     <span role="alert" style="color: red">
                                         <strong>{{ $message }}</strong>
                                     </span>
                     @enderror
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <input type="password" class="form-control" placeholder="Mật Khẩu" name="password">
 
                     <div class="input-group-append">
                         <div class="input-group-text">
@@ -61,6 +61,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                 @enderror
+                @if(session()->has('error'))
+                    <span style="color: red">{{session()->get('error')}}</span>
+                @endif
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
@@ -81,19 +84,19 @@
             <div class="social-auth-links text-center mb-3">
                 <p>- OR -</p>
                 <a href="#" class="btn btn-block btn-primary">
-                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                    <i class="fab fa-facebook mr-2"></i> Đăng nhập với Facebook
                 </a>
                 <a href="#" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    <i class="fab fa-google-plus mr-2"></i> Đăng nhập với Google+
                 </a>
             </div>
             <!-- /.social-auth-links -->
 
             <p class="mb-1">
-                <a href="forgot-password.html">I forgot my password</a>
+                <a href="forgot-password.html">Lấy lại mật khẩu</a>
             </p>
             <p class="mb-0">
-                <a href="register.html" class="text-center">Register a new membership</a>
+                <a href="register.html" class="text-center">Đăng ký thành viên mới</a>
             </p>
         </div>
         <!-- /.login-card-body -->

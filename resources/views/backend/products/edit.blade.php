@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Tạo sản phẩm</h1>
+                <h1 class="m-0 text-dark">Chỉnh sửa sản phẩm</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -46,7 +46,7 @@
                                 <select class="form-control select2" style="width: 100%;" name="category_id">
                                     @foreach($categories as $category)
 
-                                        <option @if($product->category_id===$category->id) value="{{$category->id}}" selected  @endif>{{$category->name}}</option>
+                                        <option  value="{{$category->id}}" @if($product->category_id==$category->id) selected  @endif>{{$category->name}}</option>
 
                                     @endforeach
 
@@ -120,9 +120,9 @@
                                 <label>Trạng thái sản phẩm</label>
                                 <select name="status" class="form-control select2" style="width: 100%;">
 
-                                    <option @if($product->status == 0) value="0" selected @endif>Đang nhập</option>
-                                    <option @if($product->status == 1) value="1" selected @endif>Mở bán</option>
-                                    <option @if($product->status == -1) value="-1" selected @endif>Hết hàng</option>
+                                    <option value="0" selected @if($product->status == 0) @endif>Đang nhập</option>
+                                    <option value="1" selected @if($product->status == 1) @endif>Mở bán</option>
+                                    <option value="-1" selected @if($product->status == -1) @endif>Hết hàng</option>
                                 </select>
                                 @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -133,7 +133,7 @@
 
                         <div class="card-footer">
                             <a href="{{ route('backend.product.index') }}" class="btn btn-default">Huỷ bỏ</a>
-                            <button type="submit" class="btn btn-success">Tạo mới</button>
+                            <button type="submit" class="btn btn-success">Chỉnh sửa</button>
                         </div>
 
                     </form>

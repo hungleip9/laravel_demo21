@@ -11,6 +11,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào mừng tới với <br> OniiChan Shop</strong></h1>
                             <p class="m-b-40">Chào mừng quý khách tới với website bán đồ ăn - Onii Chan shop hân hạnh phục vụ</p>
+                            <p class="m-b-40">Chào mừng quý khách tới với website bán đồ ăn - Onii Chan shop hân hạnh phục vụ</p>
                             <p><a class="btn hvr-hover btn-nav" href="#" style="color: yellow!important">Onii Chan</a></p>
                         </div>
                     </div>
@@ -55,19 +56,19 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="/backend/dist/images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="#">Thực phẩm sạch</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="/backend/dist/images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="#">Vệ sinh an toàn thực phẩm</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="/backend/dist/images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                        <a class="btn hvr-hover" href="#">Thức ăn tươi ngon</a>
                     </div>
                 </div>
             </div>
@@ -80,12 +81,12 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="offer-box-products">
-                        <img class="img-fluid" src="/backend/dist/images/add-img-01.jpg" alt="" />
+                        <img style="height: 400px; width: 550px;" class="img-fluid" src="/storage/BMP.jpg" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="offer-box-products">
-                        <img class="img-fluid" src="/backend/dist/images/add-img-02.jpg" alt="" />
+                        <img style="height: 400px; width: 550px;" class="img-fluid" src="/storage/MY.jpg" alt="" />
                     </div>
                 </div>
             </div>
@@ -132,8 +133,7 @@
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="{{route('backend.product.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Like"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="{{route('backend.product.like',$product->id)}}" data-toggle="tooltip" data-placement="right" title="Like"><i class="far fa-heart"></i></a></li>
                                 </ul>
                                 <a class="cart" href="#">Thêm vào giỏ hàng</a>
                             </div>
@@ -171,145 +171,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="/backend/dist/images/blog-img.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                @foreach($prs as $pr)
+                        <div class="col-md-6 col-lg-4 col-xl-4">
+                            <div class="blog-box">
+                                <div class="blog-img">
+                                    <img style="height: 250px;" class="img-fluid" src="/storage/{{$pr->avatar}}" alt=""/>
+                                </div>
+                                <div class="blog-content" style="background: black!important;">
+                                    <div class="title-blog">
+                                        <h3>{{$pr->name}}</h3>
+                                        <p>{{$pr->content}}</p>
+                                    </div>
+                                    <ul class="option-blog">
+                                        <li><a href="{{route('backend.product.like',$pr->id)}}"><i class="far fa-heart" style="color: red!important;"></i></a></li>
+                                        <li><a href="{{route('backend.product.detail',$pr->id)}}"><i class="fas fa-eye" style="color: red!important;"></i></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart" style="color: red!important;"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye" style="color: red!important;"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments" style="color: red!important;"></i></a></li>
-                            </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="/backend/dist/images/blog-img-01.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart" style="color: red!important;"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye" style="color: red!important;"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments" style="color: red!important;"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="/backend/dist/images/blog-img-02.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart" style="color: red!important;"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye" style="color: red!important;"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments" style="color: red!important;"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
+
             </div>
         </div>
     </div>
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-01.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-02.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-03.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-04.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-06.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-07.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-08.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="/backend/dist/images/instagram-img-05.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection

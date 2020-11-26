@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="/backend/dist/css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/backend/dist/css/custom.css">
+{{--    css ca nhan--}}
+
+{{--  end css ca nhan--}}
 {{--css tien te--}}
     <style type="text/css">
         .dollars:before { content:'$'; }

@@ -13,13 +13,14 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->truncate();
-        for ($i=1;$i<=20;$i++){
+        for ($i=1;$i<=10;$i++){
 
 
             DB::table('products')->insert(
                 [
                     'name' => 'sanpham'.$i,
                     'status' =>$i,
+                    'category_id' => '1'
                 ]);
         }
     }

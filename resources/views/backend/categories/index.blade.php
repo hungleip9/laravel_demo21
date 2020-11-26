@@ -25,7 +25,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Sản phẩm mới nhập</h3>
+                        <h3 class="card-title">Số lượng danh mục <a href="#" style="color: red!important;"> {{$categories_number}}</a></h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
