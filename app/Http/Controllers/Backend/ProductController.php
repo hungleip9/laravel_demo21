@@ -52,7 +52,6 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-
         $product = new Product();
         $product->name = $request->get('name');
         $product->slug = \Illuminate\Support\Str::slug($request->get('name'));
@@ -179,25 +178,6 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
         return redirect()->route('backend.product.index');
-    }
-    public function detail($id){
-        $products = Product::all();
-        $product = Product::find($id);
-        $images = $product->image;
-        $categories = Category::all();
-        return view('frontend.shop-detail',[
-            'products' => $products,
-            'product' => $product,
-            'categories' => $categories,
-            'images' => $images
-        ]);
-
-    }
-    public function like($id){
-        $product = Product::find($id);
-        $product->like =$product->like + 1;
-        $product->save();
-        return redirect()->route('backend.dashboard');
     }
 
 }

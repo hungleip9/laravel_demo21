@@ -105,21 +105,20 @@
                         <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Admin</a></li>
                     @endcan
 
-                    <li class="nav-item active"><a class="nav-link" href="/backend/dist/index.html">Trang Chủ</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/">Trang Chủ</a></li>
 
 
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh Mục</a>
                         <ul class="dropdown-menu" style="background-color: black!important;">
                             @foreach($categories as $category)
-                                <li><a href="#" style="color: yellow!important;">{{$category->name}}</a></li>
+                                <li><a href="{{route('backend.categories.detail',$category->id)}}" style="color: yellow!important;">{{$category->name}}</a></li>
                             @endforeach
 
                         </ul>
                     </li>
 
 
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Bình Luận</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

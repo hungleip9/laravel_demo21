@@ -31,14 +31,8 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="footer-top-box">
-                        <h3>Gửi bình luận</h3>
-                        <form class="newsletter-box" action="" method="POST">
-                            <div class="form-group">
-                                <input class="" type="text" name="comment" placeholder="Comment" />
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <button class="btn hvr-hover" type="submit">Submit</button>
-                        </form>
+                        <h3>Hòm thư đánh giá</h3>
+                        <p style="color: yellow;">Email:hunglq.dev@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">

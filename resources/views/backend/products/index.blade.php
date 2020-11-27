@@ -52,6 +52,7 @@
                                 <th>ID</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Danh muc</th>
+                                <th>Show Bình Luận</th>
                                 <th>Trạng thái</th>
                                 <th>Images</th>
                                 <th>Chỉnh sửa</th>
@@ -64,6 +65,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category->name}}</td>
+                                <td><a href="#">Show</a></td>
                                 <td>
 
                                         @if($product->status==0)

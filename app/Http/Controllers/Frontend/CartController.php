@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -24,16 +24,24 @@ class CartController extends Controller
         ]);
     }
     public function add($id){
+
         $product = Product::find($id);
-        Cart::add($product->id, $product->name,1,$product->sale_price,0,
+        if (!empty($product->sale_price)){
+            $sale = $product->sale_price;
+        }else{
+            $sale = $product->origin_price;
+        }
+        Cart::add($product->id, $product->name,1,$sale
+
+            ,0,
         [
             'image' => $product->avatar
         ]
         );
-        return redirect(route('backend.cart.index'));
+        return redirect(route('frontend.cart.index'));
     }
     public function remove($cart_id){
         Cart::remove($cart_id);
-        return redirect(route('backend.cart.index'));
+        return redirect(route('frontend.cart.index'));
     }
 }

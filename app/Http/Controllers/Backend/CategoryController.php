@@ -46,6 +46,11 @@ class CategoryController extends Controller
         $category->parent_id =$request->get('parent_id');
         $category->depth =$request->get('depth');
         $category->save();
+        if($category->save()){
+            $request->session()->flash('success','Tạo mới thành công');
+        }else{
+            $request->session()->flash('error','Tạo mới không thành công thành công');
+        }
         return redirect()->route('backend.categories.index');
     }
     public function edit($id){
@@ -71,10 +76,18 @@ class CategoryController extends Controller
 //            'products' => $products
 //        ]);
 //    }
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         $category = Category::find($id);
         $category->delete();
+        //session
+        if (!$category->delete()){
+            $request->session()->flash('success','Xóa thành công');
+
+        }else{
+            $request->session()->flash('error','Xóa không thành công');
+        }
+        //end session
         return redirect()->route('backend.categories.index');
     }
 

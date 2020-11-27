@@ -105,7 +105,7 @@
                                         <span class="input-group-text" id="">Upload</span>
                                     </div>
                                 </div>
-                                @error('images[]')
+                                @error('image')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

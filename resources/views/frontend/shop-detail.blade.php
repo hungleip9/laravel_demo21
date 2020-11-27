@@ -60,12 +60,13 @@
 {{--                        <h5 style="color: red;" class="money">5000</h5>--}}
 
                         <p class="available-stock"><p>
-						<h4>Short Description:</h4>
-						<p>Content sản phẩm</p>
+                        <h4 style="color: black;">Trạng thái: @if($product->status==-1) <span style="color: red;!important">Hết hàng</span> @elseif($product->status==0) <span style="color: blue;!important">Đang Nhập</span> @elseif($product->status==1) <span style="color: green!important;">Mở bán</span> @endif</h4>
+						<h4 style="color: black;">Thông tin về sản phẩm:</h4>
+						<p style="color:black;">{{$product->content}}</p>
 						<ul>
 							<li>
 								<div class="form-group quantity-box">
-									<label class="control-label">Số lượng</label>
+									<label class="control-label" style="color: black!important; font-weight: bold">Số lượng</label>
 									<input class="form-control" value="0" min="0" max="20" type="number">
 								</div>
 							</li>
@@ -74,8 +75,8 @@
 						<div class="price-box-bar">
 							<div class="cart-and-bay-btn">
 								<a class="btn hvr-hover" data-fancybox-close="" href="#"> Mua ngay</a>
-								<a class="btn hvr-hover" data-fancybox-close="" href="{{route('backend.cart.add',$product->id)}}"> Thêm vào rỏ hàng</a>
-                                <a class="btn hvr-hover" href="{{route('backend.product.like',$product->id)}}"><i class="fas fa-heart"></i> Yêu thích</a>
+								<a class="btn hvr-hover" data-fancybox-close="" href="{{route('frontend.cart.add',$product->id)}}"> Thêm vào rỏ hàng</a>
+                                <a class="btn hvr-hover" href="{{route('frontend.product.like',$product->id)}}"><i class="fas fa-heart"></i> Yêu thích</a>
 							</div>
 						</div>
 
@@ -105,20 +106,29 @@
                             @foreach($product->comments as $comment)
 
                             <div class="media mb-3">
-                                <div class="mr-2">
-                                    <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                                </div>
-                                <div class="media-body">
-                                    <p style="color: black!important;">{{$comment->user->name.':'.$comment->comment}}</p>
-                                    <small class="text-muted">Thời gian: {{$comment->created_at}}</small>
-                                </div>
+                                @if($comment->status==1)
+                                    <div class="media-body" style="font-weight: bold">
+                                        <p style="color: black!important;">{{$comment->user->name.': '.$comment->comment}}</p>
+                                        <small class="text-muted">Thời gian: {{$comment->created_at}}</small>
+                                    </div>
+                                @endif
                             </div>
                             @endforeach
                             <hr>
-                            <form action="{{route('backend.comments.postcomment',$product->id)}}" method="POST" role="form">
+                            <form action="{{route('frontend.comments.postcomment',$product->id)}}" method="POST" role="form">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <label style="color: black">Viết đánh giá</label>
                                 <textarea name="comment" rows="3" class="form-control"></textarea>
+                                @error('comment')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                {{--                bao loi session--}}
+                                @if(session()->has('success'))
+                                    <span style="color: white;background-color: green;">{{session()->get('success')}}</span>
+                                @else
+                                    <span style="color: white;background-color: red;">{{session()->get('error')}}</span>
+                                @endif
+                                {{--                ket thuc bao loi session--}}
                                 <br>
                                 <button class="btn hvr-hover" style="color: yellow!important">Đánh giá</button>
                             </form>

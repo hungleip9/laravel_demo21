@@ -11,7 +11,6 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Chào mừng tới với <br> OniiChan Shop</strong></h1>
                             <p class="m-b-40">Chào mừng quý khách tới với website bán đồ ăn - Onii Chan shop hân hạnh phục vụ</p>
-                            <p class="m-b-40">Chào mừng quý khách tới với website bán đồ ăn - Onii Chan shop hân hạnh phục vụ</p>
                             <p><a class="btn hvr-hover btn-nav" href="#" style="color: yellow!important">Onii Chan</a></p>
                         </div>
                     </div>
@@ -110,9 +109,6 @@
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">Tất Cả</button>
-                            @foreach($categories as $category)
-                            <button data-filter=".top-featured">{{$category->name}}</button>
-                            @endforeach
                             <button data-filter=".best-seller">Giảm Giá</button>
                         </div>
                     </div>
@@ -121,7 +117,7 @@
 
             <div class="row special-list">
                 @foreach($products as $product)
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <div class="col-lg-3 col-md-6 special-grid @if(!empty($product->sale_price)) best-seller @endif">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
@@ -132,10 +128,10 @@
                             <img style="width: 250px!important; height: 250px!important;" src="/storage/{{$product->avatar}}" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="{{route('backend.product.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="{{route('backend.product.like',$product->id)}}" data-toggle="tooltip" data-placement="right" title="Like"><i class="far fa-heart"></i></a></li>
+                                    <li><a href="{{route('frontend.product.detail',$product->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="{{route('frontend.product.like',$product->id)}}" data-toggle="tooltip" data-placement="right" title="Like"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="{{route('backend.cart.add',$product->id)}}">Thêm vào giỏ hàng</a>
+                                <a class="cart" href="{{route('frontend.cart.add',$product->id)}}">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                         <div class="why-text">
@@ -183,8 +179,8 @@
                                         <p>{{$pr->content}}</p>
                                     </div>
                                     <ul class="option-blog">
-                                        <li><a href="{{route('backend.product.like',$pr->id)}}"><i class="far fa-heart" style="color: red!important;"></i></a></li>
-                                        <li><a href="{{route('backend.product.detail',$pr->id)}}"><i class="fas fa-eye" style="color: red!important;"></i></a></li>
+                                        <li><a href="{{route('frontend.product.like',$pr->id)}}"><i class="far fa-heart" style="color: red!important;"></i></a></li>
+                                        <li><a href="{{route('frontend.product.detail',$pr->id)}}"><i class="fas fa-eye" style="color: red!important;"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

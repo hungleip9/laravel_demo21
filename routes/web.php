@@ -42,18 +42,15 @@ Route::prefix('oniichan')->group(function (){
         return view('frontend.index');})->name('oniichan.index');
 
 });
-//trang chu dashboard
-Route::get('/','Backend\DashboardController@index')->name('backend.dashboard');
-Route::get('/products/detail/{id}','Backend\ProductController@detail')->name('backend.product.detail');
-Route::get('/products/like/{id}','Backend\ProductController@like')->name('backend.product.like');
-Route::get('carts/add/{id}','Backend\CartController@add')->name('backend.cart.add');
-Route::get('carts/','Backend\CartController@index')->name('backend.cart.index');
-Route::get('carts/remove/{id}','Backend\CartController@remove')->name('backend.cart.remove');
+
+
+
 Route::group([
     'namespace' => 'Backend',
     'prefix' => 'admin',
     'middleware' => ['auth','auth_admin']
 ],function(){
+
 
     //quan ly san pham
     Route::group(['prefix' => 'products'],function (){
@@ -89,15 +86,40 @@ Route::group([
         Route::get('detail/{id}','CategoryController@detail')->name('backend.categories.detail');
         Route::delete('destroy/{id}','CategoryController@destroy')->name('backend.categories.destroy');
     });
+
+
+});
+//trang chu dashboard
+Route::get('/','Frontend\DashboardController@index')->name('frontend.dashboard');
+
+Route::group([
+    'namespace' => 'Frontend',
+    'prefix' => 'user'
+],function(){
+    //quan ly san pham
+    Route::group(['prefix' => 'products'],function (){
+        Route::get('detail/{id}','ProductController@detail')->name('frontend.product.detail');
+        Route::get('like/{id}','ProductController@like')->name('frontend.product.like');
+
+    });
+    //quan ly danh muc
+    Route::group(['prefix' => 'categories'],function (){
+        Route::get('detail/{id}','CategoryController@detail')->name('backend.categories.detail');
+    });
+
     //quan ly comment
     Route::group(['prefix' => 'comments'],function (){
-        Route::get('/','CommentController@index')->name('backend.comments.index');
-        Route::get('postcomment/{id}','CommentController@postcomment')->name('backend.comments.postcomment');
+        Route::get('/','CommentController@index')->name('frontend.comments.index');
+        Route::post('postcomment/{id}','CommentController@postcomment')->name('frontend.comments.postcomment');
+        Route::get('acComment/{id}','CommentController@acComment')->name('frontend.comments.acComment');
+        Route::delete('destroy/{id}','CommentController@destroy')->name('frontend.comments.destroy');
 
     });
     //quan ly ro hang
     Route::group(['prefix' => 'carts'],function (){
-        Route::get('/','CartController@index')->name('backend.cart.index');
+        Route::get('/','CartController@index')->name('frontend.cart.index');
+        Route::get('add/{id}','CartController@add')->name('frontend.cart.add');
+        Route::get('remove/{id}','CartController@remove')->name('frontend.cart.remove');
     });
 
 });

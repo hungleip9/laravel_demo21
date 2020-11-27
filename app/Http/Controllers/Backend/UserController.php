@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
@@ -29,6 +30,7 @@ class UserController
                 return $user_number;
             });
         // end Cache user number
+
 
         return view('backend.users.index',[
             'users' => $users,

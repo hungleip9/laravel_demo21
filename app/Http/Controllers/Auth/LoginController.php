@@ -66,7 +66,7 @@ class LoginController extends Controller
             if(Auth::user()->role == 1){
                 return redirect(route('backend.user.index'));
             }else{
-                return redirect(route('backend.dashboard'));
+                return redirect(route('frontend.dashboard'));
             }
         }else{
             $request->session()->flash('error','Tài khoản hoặc mật khẩu không đúng');
@@ -87,7 +87,7 @@ class LoginController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
-            : redirect(route('backend.dashboard'));
+            : redirect(route('frontend.dashboard'));
     }
 
 }

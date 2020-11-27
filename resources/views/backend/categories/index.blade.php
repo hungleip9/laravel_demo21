@@ -4,7 +4,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Danh sách sản phẩm</h1>
+                <h1 class="m-0 text-dark">Danh sách danh mục</h1>
+                {{--                bao loi session--}}
+                @if(session()->has('success'))
+                    <span style="color: white;background-color: green;">{{session()->get('success')}}</span>
+                @else
+                    <span style="color: white;background-color: red;">{{session()->get('error')}}</span>
+                @endif
+                {{--                ket thuc bao loi session--}}
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">

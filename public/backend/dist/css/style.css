@@ -765,7 +765,7 @@
      height: 100vh;
 }
  .slides-navigation a {
-     background:#ADB306;
+     background:#364ada40;
      position: absolute;
      height: 70px;
      width: 70px;
@@ -781,7 +781,7 @@
      font-size: 40px;
 }
  .slides-navigation a:hover {
-     background:#BB0000;
+     background:#d80f7540   ;
      color: yellow !important;
 }
  .cover-slides .container{
@@ -1301,7 +1301,7 @@ title{
 /*------------------------------------------------------------------ Footer Main -------------------------------------------------------------------*/
  .footer-main{
      padding: 70px 0px;
-     background:#BB0000;
+     background:#101010f5;
 }
 .footer-main hr{
 	border-top: 1px solid rgba(255,255,255,.6);
