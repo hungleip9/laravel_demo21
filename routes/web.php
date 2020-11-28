@@ -126,6 +126,8 @@ Route::group([
 
 
 Route::get('/home/test',"HomeController@index");
+Route::get('/getInfo-facebook/{social}',"SocialController@getInfo")->name('getInfo.facebook');
+Route::get('/checkInfo-facebook/{social}',"SocialController@checkInfo")->name('checkInfo.facebook');
 Route::get("test", "HomeController@index");
 
 

@@ -1,4 +1,4 @@
-@extends('backend.layouts.master')
+    @extends('backend.layouts.master')
 @section('content-header')
     <!-- Content Header -->
     <div class="container-fluid">
@@ -46,7 +46,7 @@
                                 <select class="form-control select2" style="width: 100%;" name="category_id">
                                     @foreach($categories as $category)
 
-                                        <option  value="{{$category->id}}" @if($product->category_id==$category->id) selected  @endif>{{$category->name}}</option>
+                                        <option  value="{{$category->id}}" @if($product->category_id==$category->id) selected @endif>{{$category->name}}</option>
 
                                     @endforeach
 

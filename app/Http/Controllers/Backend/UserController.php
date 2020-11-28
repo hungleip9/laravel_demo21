@@ -140,8 +140,10 @@ class UserController
     public function showComment($id){
         $user = User::find($id);
         $comments = $user->comments;
+        $numbers = $comments->count();
         return view('backend.users.showComment',[
-            'comments' => $comments
+            'comments' => $comments,
+            'numbers' => $numbers,
         ]);
     }
     public function destroy($id)

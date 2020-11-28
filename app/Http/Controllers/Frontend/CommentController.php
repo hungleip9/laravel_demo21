@@ -8,6 +8,7 @@ use App\Models\Comment;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class CommentController extends Controller
 {
@@ -27,12 +28,6 @@ class CommentController extends Controller
             $request->session()->flash('error','Bình luận của bạn chưa được gửi đi, kiểm tra lại');
         }
         return redirect(route('frontend.product.detail',$product_id));
-    }
-    public function showComment($id){
-        $commnets = Comment::find($id);
-        return view('backend.users.showComment',[
-            'commnets' => $commnets
-        ]);
     }
     public function acComment(Request $request,$id){
         $comments = Comment::find($id);

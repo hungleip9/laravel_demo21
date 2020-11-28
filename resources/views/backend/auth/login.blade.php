@@ -83,7 +83,7 @@
 
             <div class="social-auth-links text-center mb-3">
                 <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-primary">
+                <a href="{{url('getInfo-facebook/facebook')}}" class="btn btn-block btn-primary">
                     <i class="fab fa-facebook mr-2"></i> Đăng nhập với Facebook
                 </a>
                 <a href="#" class="btn btn-block btn-danger">
