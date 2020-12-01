@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Onii Chan</h1>
-                        <p>Danh sách các món {{$category->name}}</p>
+                        <p>Danh sách các món {{$product->category->name}}</p>
                     </div>
                 </div>
             </div>

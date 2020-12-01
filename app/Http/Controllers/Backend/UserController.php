@@ -9,6 +9,7 @@ use App\Models\Comment;
 use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Cache;
 use App\Models\User_info;
 use App\Models\UserInfo;
@@ -22,8 +23,6 @@ class UserController
     public function index(){
         $users = User::orderBy('updated_at','desc')->paginate(5);
 //        $users = DB::table('users')->get();
-//        dd($users);
-
         // Cache user number
             $user_number = Cache::remember('user_number',5,function (){
                 $user_number = User::count();
@@ -34,7 +33,7 @@ class UserController
 
         return view('backend.users.index',[
             'users' => $users,
-            'user_number' => $user_number
+            'user_number' => $user_number,
         ]);
 
     }
@@ -121,7 +120,7 @@ class UserController
     public function edit($id){
         $user = User::find($id);
         return view('backend.users.edit',[
-                'user' => $user
+                'user' => $user,
         ]);
     }
     public function upload(StoreUserRequest $request,$id){

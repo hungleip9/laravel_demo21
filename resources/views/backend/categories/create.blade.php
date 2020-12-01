@@ -51,8 +51,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Danh mục cha</label>
-                                <input type="text" class="form-control" id="" placeholder="Điền danh mục cha " name="parent_id">
-                                @error('parent_id')
+                                <select name="danhmuccha_id" class="form-control">
+                                    @foreach($danhmucchas as $danhmuccha)
+                                    <option value="{{$danhmuccha->id}}">{{$danhmuccha->name}}</option>
+                                    @endforeach
+                                </select>
+                                @error('danhmuccha_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>

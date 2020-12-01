@@ -11,31 +11,27 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
-class DashboardController extends Controller
+class DanhmucchaController extends Controller
 {
-    public function index(){
-        $categories = Category::all();
+    public function detail($id){
         $danhmucchas = Danhmuccha::all();
-        $products = Product::orderBy('updated_at','desc')->paginate(8);
-        $prs = Product::orderBy('like','desc')->paginate(3);
+        $danhmuccha = Danhmuccha::find($id);
+        $products = Product::all();
+        $categories = Category::where('danhmuccha_id',$id)->get();
         $images = Image::all();
-
         // Cache user number
         $cart_number = Cache::remember('cart_number',5,function (){
             $cart_number = Cart::count();
             return $cart_number;
         });
         // end Cache user number
-
-        return view('frontend.index',[
-            'categories' => $categories,
+        return view('frontend.detail',[
+           'danhmuccha' => $danhmuccha,
             'products' => $products,
-            'images' => $images,
-            'prs' => $prs,
-            'cart_number' => $cart_number,
             'danhmucchas' => $danhmucchas,
-
+            'cart_number' => $cart_number,
+            'images' => $images,
+            '$categories' => $categories,
         ]);
     }
-
 }

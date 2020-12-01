@@ -15,6 +15,10 @@ class OrderController extends Controller
             'orders' => $orders
         ]);
     }
+//    public function store($user_id,$product_id){
+//        $user_id =  $user_id;
+//        $product_id = $product_id;
+//    }
     public function showProducts($id)
     {
         $order = Order::find($id);

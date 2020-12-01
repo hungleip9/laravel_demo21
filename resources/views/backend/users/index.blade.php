@@ -70,20 +70,42 @@
                                     <td>User</td>
                                 @elseif($user->role==1)
                                     <td>Admin</td>
+                                @elseif($user->role==3)
+                                    <td>Boss</td>
                                 @endif
-                                <td>
-                                    <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Edit</a>
-                                </td>
-                                <td>
-                                    <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
+                                @if($user->role!=2)
+                                    @can('big-boss')
+                                        <td>
+                                            <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Edit</a>
+                                        </td>
+                                        <td>
+                                            <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
 
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-btn fa-trash"></i> Xoá
-                                        </button>
-                                    </form>
-                                </td>
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-trash"></i> Xoá
+                                                </button>
+                                            </form>
+                                        </td>
+                                    @endcan
+                                @elseif($user->role==2)
+                                    <td>
+                                        <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Edit</a>
+                                    </td>
+                                    <td>
+                                        <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fa fa-btn fa-trash"></i> Xoá
+                                            </button>
+                                        </form>
+                                    </td>
+                                @endif
+
+
                             </tr>
 
                             @endforeach

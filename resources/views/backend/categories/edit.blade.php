@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Tạo sản phẩm</h1>
+                <h1 class="m-0 text-dark">Chỉnh sửa danh mục</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -43,11 +43,24 @@
                             </div>
 
                         </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Danh mục cha</label>
+                                <select class="form-control" name="danhmuccha_id">
+                                    @foreach($danhmucchas as $danhmuccha)
+
+                                    <option  value="{{$danhmuccha->id}}" @if($category->danhmuccha_id == $danhmuccha->id) selected @endif>{{$danhmuccha->name}}</option>
+
+                                    @endforeach
+                                </select>
+                            </div>
+
+                        </div>
                         <!-- /.card-body -->
 
                         <div class="card-footer">
                             <a href="{{ route('backend.categories.index') }}" class="btn btn-default">Huỷ bỏ</a>
-                            <button type="submit" class="btn btn-success">Tạo mới</button>
+                            <button type="submit" class="btn btn-success">Chỉnh sửa</button>
                         </div>
 
                     </form>

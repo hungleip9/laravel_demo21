@@ -101,22 +101,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    @can('admin-user')
+                    @can('admin')
                         <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Admin</a></li>
                     @endcan
+                        @can('big-boss')
+                            <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Boss</a></li>
+                        @endcan
 
                     <li class="nav-item active"><a class="nav-link" href="/">Trang Chủ</a></li>
 
-
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh Mục</a>
-                        <ul class="dropdown-menu" style="background-color: black!important;">
-                            @foreach($categories as $category)
-                                <li><a href="{{route('backend.categories.detail',$category->id)}}" style="color: yellow!important;">{{$category->name}}</a></li>
-                            @endforeach
-
-                        </ul>
-                    </li>
 
 
                 </ul>
@@ -128,10 +121,11 @@
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu">
-                        <a href="#">
+                        <a href="{{route('frontend.cart.index')}}">
                             <i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
+                            <span class="badge">{{$cart_number}}</span>
                             <p> Giỏ Hàng</p>
+                        </a>
                         </a>
                     </li>
 

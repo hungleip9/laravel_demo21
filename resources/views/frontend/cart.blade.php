@@ -54,7 +54,7 @@
                 <h5 style="font-size: 20px!important;">Tổng Cộng:</h5>
                 <div class="ml-auto h5" style="color: red; margin: 0!important;margin-left: 10px!important;">{{\Gloudemans\Shoppingcart\Facades\Cart::total()}}</div>
             </div>
-            <div class="shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover" style="color:yellow!important;">Checkout</a> </div>
+            <div class="shopping-box"><a href="{{route('backend.cart.checkout')}}" class="ml-auto btn hvr-hover" style="color:yellow!important;">Đặt hàng</a> </div>
 
 
         </div>

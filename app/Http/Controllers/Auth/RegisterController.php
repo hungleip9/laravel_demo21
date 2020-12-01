@@ -91,7 +91,7 @@ class RegisterController extends Controller
 
         return $request->wantsJson()
             ? new JsonResponse([], 201)
-            : redirect(route('oniichan.index'));
+            : redirect(route('frontend.dashboard'));
     }
 
 }

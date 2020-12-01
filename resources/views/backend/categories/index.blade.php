@@ -50,6 +50,7 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Danh mục cha</th>
                                 <th>Tên danh mục</th>
                                 <th>Show sản phẩm</th>
                                 <th>Chỉnh sửa</th>
@@ -61,6 +62,7 @@
                             <tr>
 
                                 <td>{{$category->id}}</td>
+                                <td>{{$category->danhmuccha->name}}</td>
                                 <td>{{$category->name}}</td>
                                 <td><a href="{{route('backend.categories.show',$category->id)}}">Show</a></td>
                                 <td>

@@ -63,7 +63,7 @@ class LoginController extends Controller
         $name = $request->get('name');
         $password = $request->get('password');
         if (Auth::attempt(['name' => $name, 'password' => $password])) {
-            if(Auth::user()->role == 1){
+            if(Auth::user()->role == 1&&Auth::user()->role == 3){
                 return redirect(route('backend.user.index'));
             }else{
                 return redirect(route('frontend.dashboard'));

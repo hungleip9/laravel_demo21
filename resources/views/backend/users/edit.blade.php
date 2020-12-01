@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Chỉnh sửa user</h1>
+                <h1 class="m-0 text-dark">Chỉnh sửa người dùng</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -51,7 +51,6 @@
                             <div class="form-group">
                                 <label>Quyền</label>
                                 <select class="form-control select2" style="width: 100%;" name="role">
-
                                     <option value="2">User</option>
                                     <option value="1">Admin</option>
                                 </select>

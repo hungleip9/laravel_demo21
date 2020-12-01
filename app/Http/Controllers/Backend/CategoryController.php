@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\StoreProductRequest;
 use App\Models\Category;
+use App\Models\Danhmuccha;
 use App\Models\Product;
 use App\Models\Products;
 use Illuminate\Http\Request;
@@ -35,15 +36,17 @@ class CategoryController extends Controller
     }
     public function create(){
         $categories = Category::all();
+        $danhmucchas = Danhmuccha::all();
         return view('backend.categories.create',[
-            'categories' => $categories
+            'categories' => $categories,
+            'danhmucchas' => $danhmucchas
         ]);
     }
     public function  store(StoreCategoryRequest $request){
         $category = new Category();
         $category->name =$request->get('name');
 //        $category->slug = \Illuminate\Support\Str::slug($request->get('slug'));
-        $category->parent_id =$request->get('parent_id');
+        $category->danhmuccha_id =$request->get('danhmuccha_id');
         $category->depth =$request->get('depth');
         $category->save();
         if($category->save()){
@@ -55,16 +58,20 @@ class CategoryController extends Controller
     }
     public function edit($id){
         $category = Category::find($id);
+        $danhmucchas = Danhmuccha::all();
         return view('backend.categories.edit',[
-            'category' => $category
+            'category' => $category,
+            'danhmucchas' => $danhmucchas,
         ]);
     }
     public function upload(StoreCategoryRequest $request,$id){
         //lay du lieu tu form
         $name = $request->get('name');
+        $danhmuccha_id = $request->get('danhmuccha_id');
         //upload du lieu
         $category = Category::find($id);
         $category->name =$name;
+        $category->danhmuccha_id =$danhmuccha_id;
         $category->save();
         return redirect(route('backend.categories.index'));
     }

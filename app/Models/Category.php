@@ -10,4 +10,7 @@ class Category extends Model
     public function product(){
         return $this->hasMany(Product::class);
     }
+    public function danhmuccha(){
+        return $this->belongsTo(Danhmuccha::class);
+    }
 }

@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dfd7d0b-0fb1-4d85-86c8-02ef42ecb85c" name="Default Changelist" comment="" />
+    <list default="true" id="6dfd7d0b-0fb1-4d85-86c8-02ef42ecb85c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/include/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/include/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +162,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project_HTGshop" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -208,7 +232,10 @@
       <workItem from="1606454923940" duration="1411000" />
       <workItem from="1606456805843" duration="11071000" />
       <workItem from="1606491008182" duration="4587000" />
-      <workItem from="1606530084435" duration="9642000" />
+      <workItem from="1606530084435" duration="10671000" />
+      <workItem from="1606547001418" duration="5956000" />
+      <workItem from="1606563151102" duration="7672000" />
+      <workItem from="1606649556090" duration="1606000" />
     </task>
     <servers />
   </component>
@@ -225,16 +252,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="441" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605759542072" />
-    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606531135133">
+    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606554777997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="61" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606395054534" />
-    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606531135133" />
-    <state x="576" y="87" key="FileChooserDialogImpl" timestamp="1606449449138">
+    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606554777997" />
+    <state x="576" y="87" key="FileChooserDialogImpl" timestamp="1606542794656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="410" y="61" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606224571445" />
-    <state x="576" y="87" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606449449138" />
+    <state x="576" y="87" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606542794656" />
     <state x="386" y="28" key="NewPhpClassDialog" timestamp="1604837711963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -251,10 +278,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="451" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606397641436" />
-    <state x="0" y="0" width="716" height="728" key="find.popup" timestamp="1605721437968">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="0" y="0" width="1007" height="1040" key="find.popup" timestamp="1606565333825">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="0" width="716" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605721437968" />
+    <state x="0" y="0" width="1007" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606565333825" />
     <state x="255" y="153" key="run.anything.popup" timestamp="1605846379201">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -264,5 +292,16 @@
     </state>
     <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604840892374" />
     <state x="368" y="-1" width="1181" height="1478" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606492069095" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/frontend/checkout.blade.php</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

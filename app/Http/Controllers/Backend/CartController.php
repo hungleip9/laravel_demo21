@@ -1,41 +1,39 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Danhmuccha;
 use App\Models\Image;
 use App\Models\Product;
+use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 
-class DashboardController extends Controller
+class CartController extends Controller
 {
-    public function index(){
+    public function checkout(){
+        $items = Cart::content();
         $categories = Category::all();
-        $danhmucchas = Danhmuccha::all();
-        $products = Product::orderBy('updated_at','desc')->paginate(8);
-        $prs = Product::orderBy('like','desc')->paginate(3);
         $images = Image::all();
-
+        $user_info = Auth::user();
         // Cache user number
         $cart_number = Cache::remember('cart_number',5,function (){
             $cart_number = Cart::count();
             return $cart_number;
         });
         // end Cache user number
-
-        return view('frontend.index',[
+        return view('frontend.checkout',[
             'categories' => $categories,
-            'products' => $products,
-            'images' => $images,
-            'prs' => $prs,
             'cart_number' => $cart_number,
-            'danhmucchas' => $danhmucchas,
-
+            'images' => $images,
+            'items' => $items,
+            'user_info' => $user_info,
         ]);
     }
+    public function store($id){
 
+    }
 }

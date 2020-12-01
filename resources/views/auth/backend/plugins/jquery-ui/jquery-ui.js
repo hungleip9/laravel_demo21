@@ -4195,7 +4195,7 @@ var labels = $.fn.labels = function() {
 
 
 /*!
- * jQuery UI Scroll Parent 1.12.1
+ * jQuery UI Scroll Parentid 1.12.1
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors

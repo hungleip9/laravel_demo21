@@ -119,16 +119,26 @@ Route::group([
     Route::group(['prefix' => 'carts'],function (){
         Route::get('/','CartController@index')->name('frontend.cart.index');
         Route::get('add/{id}','CartController@add')->name('frontend.cart.add');
+        Route::get('checkout','CartController@checkout')->name('frontend.cart.checkout');
         Route::get('remove/{id}','CartController@remove')->name('frontend.cart.remove');
     });
 
 });
-
+Route::group([
+    'namespace' => 'Backend',
+    'prefix' => 'user-cart',
+    'middleware' => ['auth']
+],function(){
+    //quan ly ro hang
+    Route::group(['prefix' => 'carts'],function (){
+        Route::get('checkout','CartController@checkout')->name('backend.cart.checkout');
+    });
+});
 
 Route::get('/home/test',"HomeController@index");
 Route::get('/getInfo-facebook/{social}',"SocialController@getInfo")->name('getInfo.facebook');
 Route::get('/checkInfo-facebook/{social}',"SocialController@checkInfo")->name('checkInfo.facebook');
-Route::get("test", "HomeController@index");
+
 
 
 
