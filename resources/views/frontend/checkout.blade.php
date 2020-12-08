@@ -61,27 +61,28 @@
                         <div class="title-left">
                             <h3 style="color: red!important;">Thông tin khách hàng</h3>
                         </div>
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation" action="{{route('backend.cart.store')}}" method="post">
+                            @csrf
                             <div class="mb-3">
                                 <label for="username">Tên đăng nhập *</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="" name="name" value="{{$user_info->name}}" required>
-                                    <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
+                                    <input type="text" class="form-control" id="" name="name" value="{{$user_info->name}}">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="email">Email *</label>
                                 <input type="email" class="form-control" id="" name="email" value="{{$user_info->email}}">
-                                <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+
                             </div>
                             <div class="mb-3">
                                 <label for="address">Địa chỉ *</label>
-                                <input type="text" class="form-control" id="" name="address" value="{{$user_info->address}}" required>
-                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                                <input type="text" class="form-control" id="" name="address" value="{{$user_info->address}}">
+
                             </div>
                             <div class="mb-3">
                                 <label for="address2">Phone *</label>
                                 <input type="text" class="form-control" id="" name="phone" value="{{$user_info->phone}}"> </div>
+                            <div class="col-12 shopping-box"><button class="ml-auto btn hvr-hover" style="color: yellow!important;">Đặt hàng</button></div>
                         </form>
                     </div>
                 </div>
@@ -113,7 +114,7 @@
                                 </div>
                                 <hr> </div>
                         </div>
-                        <div class="col-12 d-flex shopping-box"> <a href="checkout.html" class="ml-auto btn hvr-hover" style="color: yellow!important;">Đặt hàng</a> </div>
+
                     </div>
                 </div>
             </div>

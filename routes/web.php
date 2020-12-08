@@ -132,6 +132,8 @@ Route::group([
     //quan ly ro hang
     Route::group(['prefix' => 'carts'],function (){
         Route::get('checkout','CartController@checkout')->name('backend.cart.checkout');
+        Route::post('store','CartController@store')->name('backend.cart.store');
+        Route::get('sendMail','CartController@sendMail')->name('backend.cart.sendMail');
     });
 });
 
