@@ -109,6 +109,16 @@
                         @endcan
 
                     <li class="nav-item active"><a class="nav-link" href="/">Trang Chủ</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh Mục</a>
+                            <ul class="dropdown-menu" style="background: black;">
+                            @foreach($danhmucs as $danhmuc)
+                                <li><a href="#" style="color: yellow!important;">{{$danhmuc->name}}</a></li>
+                                @endforeach
+
+                            </ul>
+                        </li>
+
 
 
 

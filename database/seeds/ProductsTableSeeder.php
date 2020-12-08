@@ -19,8 +19,11 @@ class ProductsTableSeeder extends Seeder
             DB::table('products')->insert(
                 [
                     'name' => 'sanpham'.$i,
-                    'status' =>$i,
-                    'category_id' => '1'
+                    'status' =>'1',
+                    'category_id' => '2',
+                    'origin_price' => '30000',
+                    'sale_price' => '25000',
+                    'user_id' => '1',
                 ]);
         }
     }

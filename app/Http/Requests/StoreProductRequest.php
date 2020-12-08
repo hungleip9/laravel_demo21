@@ -19,13 +19,13 @@ class StoreProductRequest extends FormRequest
 
         return [
             //validate
-            'name'            => ['required', 'min:10', 'max:255'],
+            'name'            => ['required', 'min:4', 'max:255'],
             'category_id'     => ['required'],
             'origin_price'    => ['required', 'min:1', 'max:20'],
             'sale_price'      => [ 'max:20'],
             'content'         => ['required', 'min:10', 'max:100'],
-            'image'          => ['required','max:3025'],
-            'images'          => ['required','max:3025'],
+            'image'          => ['max:3025'],
+            'images'          => ['max:3025'],
             'status'          => ['required','in:-1,0,1'],
         //end validate
         ];

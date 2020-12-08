@@ -84,7 +84,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fa fa-user-circle"></i>
                         <p>
                             Quản lý người dùng
                             <i class="fas fa-angle-left right"></i>
@@ -107,19 +107,13 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fa fa-shopping-cart"></i>
                         <p>
                             Order
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('backend.user.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tạo mới</p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="{{route('order.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>

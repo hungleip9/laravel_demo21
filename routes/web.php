@@ -60,6 +60,7 @@ Route::group([
         Route::post('/store','ProductController@store')->name('backend.product.store');
         Route::put('/{id}/update','ProductController@update')->name('backend.product.update');
         Route::put('/{id}/comment','ProductController@comment')->name('backend.product.comment');
+        Route::get('showComment/{id}','ProductController@showComment')->name('backend.product.showComment');
         Route::delete('/{id}/destroy','ProductController@destroy')->name('backend.product.destroy');
         Route::get('/{id}/show','ProductController@showImages')->name('backend.product.show');
     });
@@ -70,7 +71,6 @@ Route::group([
         Route::get('create','UserController@create')->name('backend.user.create');
         Route::post('store','UserController@store')->name('backend.user.store');
         Route::get('{id}/showProduct','UserController@showProduct')->name('backend.user.showProduct');
-        Route::get('showComment/{id}','UserController@showComment')->name('backend.user.showComment');
         Route::get('{id}/edit','UserController@edit')->name('backend.user.edit');
         Route::put('{id}/upload','UserController@upload')->name('backend.user.upload');
         Route::delete('{id}/destroy','UserController@destroy')->name('backend.user.destroy');

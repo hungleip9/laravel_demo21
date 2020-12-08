@@ -17,17 +17,29 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->insert(
             [
                 [
-                    'name' => 'Com',
+                    'name' => 'Cơm',
+                    'parent_id' => '-1',
                 ],
                 [
-                    'name' => 'Banh',
+                    'name' => 'Bánh',
+                    'parent_id' => '-1',
                 ],
                 [
-                    'name' => 'Ga ran',
+                    'name' => 'Nước',
+                    'parent_id' => '-1',
                 ],
                 [
-                    'name' => 'Nuoc giai khat',
-                ]
+                    'name' => 'Gà',
+                    'parent_id' => '-1',
+                ],
+                [
+                    'name' => 'Kem',
+                    'parent_id' => '-1',
+                ],
+                [
+                    'name' => 'Khác',
+                    'parent_id' => '-1',
+                ],
             ]
 
         );

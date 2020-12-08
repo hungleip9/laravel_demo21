@@ -62,9 +62,19 @@
                             <tr>
 
                                 <td>{{$category->id}}</td>
-                                <td>{{$category->danhmuccha->name}}</td>
+                                @if($category->parent_id == -1)
+                                <td>===Danh mục cha===</td>
+                                @elseif($category->parent_id == 0)
+                                    <td>Null</td>
+                                @else
+                                    @foreach($ctrs as $ctr)
+                                        @if($ctr->id == $category->parent_id)
+                                    <td>{{$ctr->name}}</td>
+                                        @endif
+                                    @endforeach
+                                @endif
                                 <td>{{$category->name}}</td>
-                                <td><a href="{{route('backend.categories.show',$category->id)}}">Show</a></td>
+                                <td><a href="{{route('backend.categories.show',$category->id)}}" class="btn btn-primary">Show</a></td>
                                 <td>
                                     <a href="{{route('backend.categories.edit',$category->id)}}" class="btn btn-success">Edit</a>
                                 </td>

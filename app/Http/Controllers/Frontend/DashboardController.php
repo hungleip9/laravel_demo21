@@ -15,7 +15,7 @@ class DashboardController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        $danhmucchas = Danhmuccha::all();
+
         $products = Product::orderBy('updated_at','desc')->paginate(8);
         $prs = Product::orderBy('like','desc')->paginate(3);
         $images = Image::all();
@@ -33,7 +33,7 @@ class DashboardController extends Controller
             'images' => $images,
             'prs' => $prs,
             'cart_number' => $cart_number,
-            'danhmucchas' => $danhmucchas,
+
 
         ]);
     }

@@ -43,6 +43,15 @@ class ProductController extends Controller
         ]);
 
     }
+    public function showComment($id){
+        $product = Product::find($id);
+        $comments = $product->comments;
+        $numbers = $comments->count();
+        return view('backend.products.showComment',[
+            'comments' => $comments,
+            'numbers' => $numbers,
+        ]);
+    }
     public function create(){
         $categories = Category::get();
         return view('backend.products.create')->with([
@@ -86,13 +95,8 @@ class ProductController extends Controller
                 $image->save();
             }
 
-        }else{
-            return redirect(route('backend.product.create'));
         }
         //end image
-
-
-
         //session
         if ($product->save()){
             $request->session()->flash('success','Tao mới thành công');

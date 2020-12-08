@@ -110,9 +110,11 @@
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">Tất Cả</button>
                             <button data-filter=".best-seller">Giảm Giá</button>
-                            @foreach($danhmucchas as $danhmuccha)
-                                <button data-filter=".{{$danhmuccha->id}}">{{$danhmuccha->name}}</button>
+                            @foreach($danhmucs as $danhmuc)
+                                <button data-filter=".{{$danhmuc->id}}">{{$danhmuc->name}}</button>
                             @endforeach
+
+
                         </div>
                     </div>
                 </div>
@@ -120,7 +122,7 @@
 
             <div class="row special-list">
                 @foreach($products as $product)
-                <div class="col-lg-3 col-md-6 special-grid {{$product->category->danhmuccha_id}} @if(!empty($product->sale_price)) best-seller @endif">
+                <div class="col-lg-3 col-md-6 special-grid @if($product->category->parent_id==-1) {{$product->category->id}} @elseif($product->category->parent_id== null) 1 @else {{$product->category->parent_id}} @endif @if(!empty($product->sale_price)) best-seller @endif">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">

@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Cache;
 class CategoryController extends Controller
 {
     public function index(){
-        $categories = Category::paginate(5);
+        $categories = Category::orderBy('updated_at','desc')->paginate(5);
+        $ctrs = Category::where('parent_id','-1')->get();
         //cache categories number
         $categories_number = Cache::remember('categories_number',5,function (){
             $categories_number = Category::count();
@@ -24,7 +25,8 @@ class CategoryController extends Controller
         //end cache categories number
         return view('backend.categories.index',[
             'categories' => $categories,
-            'categories_number' => $categories_number
+            'categories_number' => $categories_number,
+            'ctrs' =>  $ctrs,
         ]);
     }
     public function showProducts($id){
@@ -36,17 +38,16 @@ class CategoryController extends Controller
     }
     public function create(){
         $categories = Category::all();
-        $danhmucchas = Danhmuccha::all();
+        $cts = Category::where('parent_id','-1')->get();
         return view('backend.categories.create',[
             'categories' => $categories,
-            'danhmucchas' => $danhmucchas
+            'cts' => $cts,
         ]);
     }
     public function  store(StoreCategoryRequest $request){
         $category = new Category();
         $category->name =$request->get('name');
-//        $category->slug = \Illuminate\Support\Str::slug($request->get('slug'));
-        $category->danhmuccha_id =$request->get('danhmuccha_id');
+        $category->parent_id =$request->get('parent_id');
         $category->depth =$request->get('depth');
         $category->save();
         if($category->save()){
@@ -58,20 +59,21 @@ class CategoryController extends Controller
     }
     public function edit($id){
         $category = Category::find($id);
-        $danhmucchas = Danhmuccha::all();
+        $categories = Category::where('parent_id','-1')->get();
         return view('backend.categories.edit',[
             'category' => $category,
-            'danhmucchas' => $danhmucchas,
+            'categories' => $categories,
+
         ]);
     }
-    public function upload(StoreCategoryRequest $request,$id){
+    public function upload(Request $request,$id){
         //lay du lieu tu form
         $name = $request->get('name');
-        $danhmuccha_id = $request->get('danhmuccha_id');
+        $parent_id = $request->get('parent_id');
         //upload du lieu
         $category = Category::find($id);
         $category->name =$name;
-        $category->danhmuccha_id =$danhmuccha_id;
+        $category->parent_id =$parent_id;
         $category->save();
         return redirect(route('backend.categories.index'));
     }
@@ -86,6 +88,13 @@ class CategoryController extends Controller
     public function destroy(Request $request,$id)
     {
         $category = Category::find($id);
+        if($category->parent_id == -1){
+            $categories = Category::where('parent_id',$id)->get();
+            foreach ($categories as $ct){
+                $ct->parent_id = null;
+                $ct->save();
+            }
+        }
         $category->delete();
         //session
         if (!$category->delete()){

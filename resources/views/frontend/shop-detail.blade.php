@@ -51,7 +51,7 @@
 {{--                        <h4>{{}}</h4>--}}
 {{--                        {{$product->category->name}} //ten danh muc--}}
                         @if(!empty($product->sale_price))
-                            <del class="money">{{$product->origin_price}}</del>
+                            <del class="money" style="color: black;">{{$product->origin_price}}</del>
                             <h5 style="color: red;" class="money">{{$product->sale_price}}</h5>
                         @else
                             <h5 style="color: red;" class="money">{{$product->origin_price}}</h5>

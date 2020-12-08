@@ -5,6 +5,7 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Tạo sản phẩm</h1>
+                <td><a href="{{route('backend.product.index')}}" class="btn btn-primary">Back</a></td>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">

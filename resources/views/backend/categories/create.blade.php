@@ -51,14 +51,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Danh mục cha</label>
-                                <select name="danhmuccha_id" class="form-control">
-                                    @foreach($danhmucchas as $danhmuccha)
-                                    <option value="{{$danhmuccha->id}}">{{$danhmuccha->name}}</option>
+                                <select name="parent_id" class="form-control">
+                                    <option value="-1">===Danh mục cha===</option>
+                                    @foreach($cts as $ct)
+                                        <option value="{{$ct->id}}"> {{$ct->name}}</option>
                                     @endforeach
                                 </select>
-                                @error('danhmuccha_id')
+                                @error('parent_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+
                             </div>
 
 

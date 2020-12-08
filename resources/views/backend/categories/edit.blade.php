@@ -43,17 +43,18 @@
                             </div>
 
                         </div>
+                        @if($category->parent_id != -1)
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Danh mục cha</label>
-                                <select class="form-control" name="danhmuccha_id">
-                                    @foreach($danhmucchas as $danhmuccha)
-
-                                    <option  value="{{$danhmuccha->id}}" @if($category->danhmuccha_id == $danhmuccha->id) selected @endif>{{$danhmuccha->name}}</option>
-
+                                <select class="form-control" name="parent_id">
+                                    @foreach($categories as $ctr)
+                                    <option value="{{$ctr->id}}" @if($category->parent_id == $ctr->id) selected @endif>{{$ctr->name}}</option>
                                     @endforeach
+
                                 </select>
                             </div>
+                            @endif
 
                         </div>
                         <!-- /.card-body -->

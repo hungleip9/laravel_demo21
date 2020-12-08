@@ -38,13 +38,13 @@ class CommentController extends Controller
         }else{
             $request->session()->flash('error','Cập nhật không thành công!');
         }
-       return redirect(route('backend.user.index',$comments->user_id));
+       return redirect(route('backend.product.showComment',$comments->product_id));
 
     }
     public function destroy($id)
     {
         $comments = Comment::find($id);
         $comments->delete();
-        return redirect(route('backend.user.showComment',$comments->user_id));
+        return redirect(route('backend.product.showComment',$comments->product_id));
     }
 }

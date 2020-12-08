@@ -4,8 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Show Image</h1>
-                <td><a href="{{route('backend.product.index')}}" class="btn btn-primary">Back</a></td>
+                <h1 class="m-0 text-dark">Bình Luận Sản Phẩm</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -26,7 +25,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Sản phẩm mới nhập</h3>
+                        <h3 class="card-title">số lượng bình luận <span style="color:red!important;">{{$numbers}}</span></h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -44,22 +43,44 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name Image</th>
+                                <th>User_id</th>
+                                <th>Product_id</th>
+                                <th>Comments</th>
+                                <th>Duyệt</th>
+                                <th>Xóa</th>
+
 
 
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($images as $image)
-                            <tr>
+                            @foreach($comments as $comment)
+                                <tr>
 
-                                <td>{{$image->id}}</td>
-                                <td>{{$image->name}}</td>
+                                        <td>{{$comment->id}}</td>
+                                        <td>{{$comment->user_id}}</td>
+                                        <td>{{$comment->product_id}}</td>
+                                    @if($comment->status == 0)
+                                        <td>{{$comment->comment}}</td>
+                                    @elseif($comment->status == 1)
+                                        <td>{{$comment->comment}} <i class="fa fa-check-circle" aria-hidden="true" style="color: blue;"></i></td>
+                                    @endif
+                                    <td>
+                                        <a href="{{route('frontend.comments.acComment',$comment->id)}}" class="btn btn-success">Duyệt</a>
+
+                                    </td>
+                                    <td><form action="{{route('frontend.comments.destroy',$comment->id)}}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button class="btn btn-danger">Xóa</button>
+
+                                        </form></td>
 
 
 
 
-                            </tr>
+
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>

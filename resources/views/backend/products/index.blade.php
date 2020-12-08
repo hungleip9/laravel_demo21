@@ -65,7 +65,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category->name}}</td>
-                                <td><a href="#">Show</a></td>
+                                <td><a href="{{route('backend.product.showComment',$product->id)}}" class="btn btn-primary">Show</a></td>
                                 <td>
 
                                         @if($product->status==0)
@@ -78,7 +78,7 @@
 
                                 </td>
 
-                                <td><a href="{{route('backend.product.show',$product->id)}}">Show</a></td>
+                                <td><a href="{{route('backend.product.show',$product->id)}}" class="btn btn-primary">Show</a></td>
 {{--                                @can('update', $product)--}}
                                 <td>
                                     <a href="{{route('backend.product.edit',$product->id)}}" class="btn btn-success">Chỉnh sửa</a>

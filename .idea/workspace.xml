@@ -5,28 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dfd7d0b-0fb1-4d85-86c8-02ef42ecb85c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/checkout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/products/showComment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DanhmucchaController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Danhmuccha.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_29_140751_create_danhmucchas_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DanhmucchasTableSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProductsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/products/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/products/showImage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/products/showImage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/showProduct.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/showProduct.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/include/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/include/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/shop-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/shop-detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +174,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project_HTGshop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/products" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -174,15 +186,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel_demo21\app\Http\Controllers\Frontend" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel_demo21\resources\views\backend\products" />
       <recent name="C:\xampp\htdocs\laravel_demo21\app\Http\Controllers\Frontend" />
       <recent name="C:\xampp\htdocs\laravel_demo21\resources\views\frontend" />
       <recent name="C:\xampp\htdocs\laravel_demo21\vendor" />
       <recent name="C:\xampp\htdocs\laravel_demo21\resources\views\frontend\include" />
-      <recent name="C:\xampp\htdocs\laravel_demo21\resources\views\frontend\layouts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laravel_demo21\app\Http\Controllers\Frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -236,6 +248,7 @@
       <workItem from="1606547001418" duration="5956000" />
       <workItem from="1606563151102" duration="7672000" />
       <workItem from="1606649556090" duration="1606000" />
+      <workItem from="1607418213054" duration="10498000" />
     </task>
     <servers />
   </component>
@@ -252,11 +265,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="441" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605759542072" />
-    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606554777997">
+    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607425785210">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="347" y="61" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606395054534" />
-    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606554777997" />
+    <state x="488" y="87" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607425785210" />
     <state x="576" y="87" key="FileChooserDialogImpl" timestamp="1606542794656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

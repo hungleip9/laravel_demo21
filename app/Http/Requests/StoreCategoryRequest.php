@@ -25,8 +25,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
         'name' =>  ['required', 'min:2','max:150'],
-        'danhmuccha_id' => ['required'],
-
+        'parent_id' => ['required','max:150'],
         ];
     }
     public function messages()

@@ -51,7 +51,6 @@
                                 <th>Tên</th>
                                 <th>Sản Phẩm</th>
                                 <th>Email</th>
-                                <th>Show Comment</th>
                                 <th>Quyền</th>
                                 <th>Sửa</th>
                                 <th>Xóa</th>
@@ -63,9 +62,9 @@
                             <tr>
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
-                                <td><a href="{{route('backend.user.showProduct',$user->id)}}">Show</a></td>
+                                <td><a href="{{route('backend.user.showProduct',$user->id)}}" class="btn btn-primary">Show</a></td>
                                 <td>{{$user->email}}</td>
-                                <td><a href="{{route('backend.user.showComment',$user->id)}}">Show</a></td>
+
                                 @if($user->role==2)
                                     <td>User</td>
                                 @elseif($user->role==1)
@@ -76,7 +75,7 @@
                                 @if($user->role!=2)
                                     @can('big-boss')
                                         <td>
-                                            <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Edit</a>
+                                            <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Chỉnh sửa</a>
                                         </td>
                                         <td>
                                             <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
@@ -91,7 +90,7 @@
                                     @endcan
                                 @elseif($user->role==2)
                                     <td>
-                                        <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Edit</a>
+                                        <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Chỉnh sửa</a>
                                     </td>
                                     <td>
                                         <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
