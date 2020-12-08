@@ -31,6 +31,7 @@ class DashboardController extends Controller
             return $cart_number;
         });
         // end Cache user number
+
         $prts = Product::where('name','like','%'.$request->key.'%')->orWhere('origin_price',$request->key)->get();
         return view('frontend.search',[
             'prts' => $prts,

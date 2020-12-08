@@ -8,7 +8,7 @@
                     <div class="table-main table-responsive">
                         <table class="table">
                             <thead>
-                                <tr style="color: white!important;">
+                                <tr style="color: white!important; text-align: center">
                                     <th>Ảnh sản phẩm</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Giá</th>
@@ -20,7 +20,7 @@
                             <tbody>
                             @foreach($items as $item)
 
-                                <tr>
+                                <tr style="text-align: center">
                                     <td class="thumbnail-img">
                                         <a href="#">
 									<img class="img-fluid" src="/storage/{{$item->options->image}}" alt="" />
@@ -34,7 +34,9 @@
                                     <td class="price-pr">
                                         <p style="color: black; font-weight: bold;" class="money">{{$item->price}}</p>
                                     </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="{{$item->qty}}" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="quantity-box">
+                                        <p style="color: black; font-weight: bold; text-align: center" class="">{{$item->qty}}</p>
+{{--                                        <input type="text" size="4" value="{{$item->qty}}"></td>--}}
                                     <td class="total-pr">
                                         <p style="color: black; font-weight: bold;" class="money">{{$item->price*$item->qty}}</p>
                                     </td>

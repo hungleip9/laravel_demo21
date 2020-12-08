@@ -13,11 +13,7 @@
                 {{--                ket thuc bao loi session--}}
             </div><!-- /.col -->
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Người dùng</a></li>
-                    <li class="breadcrumb-item active">Danh sách</li>
-                </ol>
+
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
@@ -36,7 +32,7 @@
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
                             <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th>ID</th>
                                 <th>Tên</th>
                                 <th>Sản Phẩm</th>
@@ -49,7 +45,7 @@
                             </thead>
                             <tbody>
                             @foreach($users as $user)
-                            <tr>
+                            <tr style="text-align: center;">
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
                                 <td><a href="{{route('backend.user.showProduct',$user->id)}}" class="btn btn-primary">Show</a></td>
@@ -62,7 +58,10 @@
                                 @elseif($user->role==3)
                                     <td>Boss</td>
                                 @endif
-                                @if($user->role!=2)
+                                @if($user->role==3)
+                                    <td></td>
+                                    <td></td>
+                                @elseif($user->role!=2)
                                     @can('big-boss')
                                         <td>
                                             <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Chỉnh sửa</a>
@@ -92,6 +91,7 @@
                                             </button>
                                         </form>
                                     </td>
+
                                 @endif
 
 

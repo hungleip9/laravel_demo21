@@ -14,11 +14,7 @@
 {{--                ket thuc bao loi session--}}
             </div><!-- /.col -->
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                    <li class="breadcrumb-item active">Danh sách</li>
-                </ol>
+
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -38,7 +34,7 @@
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
                             <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th>ID</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Danh muc</th>
@@ -51,7 +47,7 @@
                             </thead>
                             <tbody>
                             @foreach($products as $product)
-                            <tr>
+                            <tr style="text-align: center;">
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category->name}}</td>

@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\DB;
 class UserController
 {
     public function index(){
-        $users = User::orderBy('updated_at','desc')->paginate(5);
+        $users = User::orderBy('id')->paginate(5);
 //        $users = DB::table('users')->get();
         // Cache user number
             $user_number = Cache::remember('user_number',5,function (){

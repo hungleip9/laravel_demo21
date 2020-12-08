@@ -7,11 +7,6 @@
                 <h1 class="m-0 text-dark">Bình Luận Sản Phẩm</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                    <li class="breadcrumb-item active">Danh sách</li>
-                </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -41,7 +36,7 @@
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
                             <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th>ID</th>
                                 <th>User_id</th>
                                 <th>Product_id</th>
@@ -55,7 +50,7 @@
                             </thead>
                             <tbody>
                             @foreach($comments as $comment)
-                                <tr>
+                                <tr style="text-align: center;">
 
                                         <td>{{$comment->id}}</td>
                                         <td>{{$comment->user_id}}</td>

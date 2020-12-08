@@ -8,11 +8,7 @@
                 <a href="{{route('backend.user.index')}}" class="btn btn-primary">Back</a>
             </div><!-- /.col -->
             <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                    <li class="breadcrumb-item active">Danh sách</li>
-                </ol>
+
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -27,39 +23,29 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Sản phẩm mới nhập</h3>
-
-                        <div class="card-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover">
                             <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Slug</th>
-                                <th>Content</th>
+                                <th>Image</th>
+
 
 
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($products as $product)
-                            <tr>
+                            <tr style="text-align: center;">
 
                                 <td>{{$product->id}}</td>
 
                                 <td>{{$product->name}}</td>
 
-
+                                <td><img src="/storage/{{$product->avatar}}" alt="" style="width: 50px;height: 50px;"></td>
 
                             </tr>
                             @endforeach

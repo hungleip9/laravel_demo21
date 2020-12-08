@@ -1,12 +1,12 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <div class="products-box wow bounceInLeft">
+    <div class="products-box wow bounceInLeft" style="background: white!important;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Onii Chan</h1>
-                        <p>Tìm thấy 5 món</p>
+                        <h1 style="color: black!important;">Onii Chan</h1>
+                        <p style="color: black!important;">Tìm thấy <span style="color: red!important;">{{count($prts)}}</span> sản phẩm</p>
                     </div>
                 </div>
             </div>
