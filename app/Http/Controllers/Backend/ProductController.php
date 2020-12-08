@@ -10,6 +10,7 @@ use App\Models\Product;
 
 use App\Task;
 use App\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;

@@ -91,6 +91,7 @@ Route::group([
 });
 //trang chu dashboard
 Route::get('/','Frontend\DashboardController@index')->name('frontend.dashboard');
+Route::get('search','Frontend\DashboardController@search')->name('frontend.dashboard.search');
 
 Route::group([
     'namespace' => 'Frontend',
