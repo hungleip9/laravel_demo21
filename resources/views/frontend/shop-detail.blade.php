@@ -20,7 +20,7 @@
     <div class="shop-detail-box-main">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-6">
+                <div class="col-xl-5 col-lg-5 col-md-6 wow bounceInLeft">
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
 
                             <div class="carousel-inner" role="listbox">
@@ -45,7 +45,7 @@
 
                     </div>
                 </div>
-                <div class="col-xl-7 col-lg-7 col-md-6">
+                <div class="col-xl-7 col-lg-7 col-md-6 wow bounceInRight">
                     <div class="single-product-details">
                         <h2 style="color: red!important;">{{$product->name}}</h2>
 {{--                        <h4>{{}}</h4>--}}

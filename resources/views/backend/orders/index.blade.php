@@ -55,7 +55,7 @@
                             <tr>
 
                                 <td>{{$order->id}}</td>
-                                <td><a href="{{route('order.showProducts',$order->id)}}">Show</a></td>
+                                <td><a href="{{route('order.showProducts',$order->id)}}" class="btn btn-primary">Show</a></td>
                                 <td>{{$order->user_id}}</td>
                                 <td>{{$order->product_id}}</td>
                                 <td>{{$order->money}}</td>

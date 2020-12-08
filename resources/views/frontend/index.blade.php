@@ -3,7 +3,7 @@
 
     <!-- Start Slider -->
     <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
+        <ul class="slides-container wow bounceInRight">
             <li class="text-center">
                 <img src="/backend/dist/images/banner-01.jpg" alt="">
                 <div class="container">
@@ -49,7 +49,7 @@
     <!-- End Slider -->
 
     <!-- Start Categories  -->
-    <div class="categories-shop">
+    <div class="categories-shop wow bounceInLeft">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -75,7 +75,7 @@
     </div>
     <!-- End Categories -->
 
-    <div class="box-add-products">
+    <div class="box-add-products wow bounceInRight">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -94,7 +94,7 @@
 
     <!-- Start Products  -->
 
-    <div class="products-box">
+    <div class="products-box wow bounceInLeft">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -161,7 +161,7 @@
 
         </div>
     </div>
-    <div class="latest-blog">
+    <div class="latest-blog wow bounceInRight">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

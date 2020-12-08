@@ -32,7 +32,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Số lượng sản phẩm <a href="#" style="color: red!important;"> {{$products_number}}</a></h3>
+                        <h3 class="card-title"> <a href="{{route('backend.product.create')}}" class="btn btn-info"> <i class="fa fa-plus" aria-hidden="true"></i> </a> Số lượng sản phẩm <a href="#" style="color: red!important;"> {{$products_number}}</a></h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -78,7 +78,7 @@
 
                                 </td>
 
-                                <td><a href="{{route('backend.product.show',$product->id)}}" class="btn btn-primary">Show</a></td>
+                                <td><a href="{{route('backend.product.show',$product->id)}}"><img src="/storage/{{$product->avatar}}" alt="" style="height: 50px; width: 50px;"></a></td>
 {{--                                @can('update', $product)--}}
                                 <td>
                                     <a href="{{route('backend.product.edit',$product->id)}}" class="btn btn-success">Chỉnh sửa</a>

@@ -32,96 +32,10 @@
                     </a>
 
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-basket"></i>
-                        <p>
-                            Quản lý sản phẩm
-                            <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('backend.product.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tạo mới</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('backend.product.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
-                        <p>
-                            Quản lý danh mục
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('backend.categories.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tạo mới</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{route('backend.categories.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-user-circle"></i>
-                        <p>
-                            Quản lý người dùng
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('backend.user.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tạo mới</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('backend.user.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-shopping-cart"></i>
-                        <p>
-                            Order
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('order.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                <li class="nav-item has-treeview"><a href="{{route('backend.product.index')}}" class="nav-link"><i class="nav-icon fas fa-shopping-basket"></i>Quản lý sản phẩm</a></li>
+                <li class="nav-item has-treeview"><a href="{{route('backend.categories.index')}}" class="nav-link"><i class="nav-icon fas fa-chart-pie"></i>Quản lý danh mục</a></li>
+                <li class="nav-item has-treeview"><a href="{{route('backend.user.index')}}" class="nav-link"><i class="nav-icon fa fa-user-circle"></i>Quản lý người dùng</a></li>
+                <li class="nav-item has-treeview"><a href="{{route('order.index')}}" class="nav-link"><i class="nav-icon fa fa-shopping-cart"></i>Quản lý đơn hàng</a></li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -3,7 +3,7 @@
     <!-- Start Cart  -->
     <div class="cart-box-main">
         <div class="container">
-            <div class="row">
+            <div class="row wow bounceInLeft">
                 <div class="col-lg-12">
                     <div class="table-main table-responsive">
                         <table class="table">
@@ -50,12 +50,18 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex gr-total">
+            <div class="d-flex gr-total wow bounceInRight">
                 <h5 style="font-size: 20px!important;">Tổng Cộng:</h5>
                 <div class="ml-auto h5" style="color: red; margin: 0!important;margin-left: 10px!important;">{{\Gloudemans\Shoppingcart\Facades\Cart::total()}}</div>
             </div>
-            <div class="shopping-box"><a href="{{route('backend.cart.checkout')}}" class="ml-auto btn hvr-hover" style="color:yellow!important;">Đặt hàng</a> </div>
-
+            <div class="shopping-box wow bounceInRight"><a href="{{route('backend.cart.checkout')}}" class="ml-auto btn hvr-hover" style="color:yellow!important;">Đặt hàng</a> </div>
+            {{--                bao loi session--}}
+            @if(session()->has('success'))
+                <span style="color: white;background-color: green;">{{session()->get('success')}}</span>
+            @else
+                <span style="color: white;background-color: red;">{{session()->get('error')}}</span>
+            @endif
+            {{--                ket thuc bao loi session--}}
 
         </div>
     </div>

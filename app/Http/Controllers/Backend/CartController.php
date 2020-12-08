@@ -56,7 +56,7 @@ class CartController extends Controller
 
 
     }
-    public function sendMail(){
+    public function sendMail(Request $request){
         $user = Auth::user();
         $items = Cart::content();
         $data = [
@@ -71,6 +71,11 @@ class CartController extends Controller
             $massage->to(Auth::user()->email,Auth::user()->name);
             $massage->subject('Cảm ơn bạn đã đặt hàng tại OniiChan-Shop');
         });
+        if(true){
+            $request->session()->flash('success','Đơn hàng của quánh khách đang được xử lý, mời kiểm tra Email');
+        }else{
+            $request->session()->flash('error','Thất bại');
+        }
         return redirect(route('frontend.cart.index'));
     }
 }

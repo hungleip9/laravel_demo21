@@ -27,9 +27,6 @@
     <link rel="stylesheet" href="/backend/dist/css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/backend/dist/css/custom.css">
-{{--    css ca nhan--}}
-
-{{--  end css ca nhan--}}
 {{--css tien te--}}
     <style type="text/css">
         .dollars:before { content:'$'; }
@@ -40,7 +37,12 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <!-- wow -->
+    <script type="text/javascript" src="/backend/dist/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- end wow -->
 </head>
 
 <body>
