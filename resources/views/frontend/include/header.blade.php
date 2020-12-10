@@ -113,16 +113,31 @@
                             <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Boss</a></li>
                         @endcan
 
-                    <li class="nav-item active"><a class="nav-link" href="/">Trang Chủ</a></li>
-                        <li class="dropdown">
+                    <li class="nav-item active"  style="height: 40px; padding-right: 70px;"><a class="nav-link" href="/">Trang Chủ</a></li>
+                    <li class="dropdown"  style="height: 40px; padding-right: 70px;">
+                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Khu Vực</a>
+                        <ul class="dropdown-menu" style="background: black; width: auto!important;">
+
+                                <li><a href="#" style="color: yellow!important;width: auto!important;">Hà Nội</a></li>
+                                <li><a href="#" style="color: yellow!important;width: auto!important;">Hồ Chí Minh</a></li>
+                                <li><a href="#" style="color: yellow!important;width: auto!important;">Đà Nẵng</a></li>
+
+                        </ul>
+                    </li>
+                        <li class="dropdown"  style="height: 40px; padding-right: 70px;">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh Mục</a>
-                            <ul class="dropdown-menu" style="background: black;">
+                            <ul class="dropdown-menu" style="background: black; width: 50px;">
                             @foreach($danhmucs as $danhmuc)
                                 <li><a href="#" style="color: yellow!important;">{{$danhmuc->name}}</a></li>
                                 @endforeach
-
                             </ul>
                         </li>
+{{--                    <li class="nav-item active"  style="height: 40px; padding-right: 70px;">--}}
+
+{{--                        <a class="nav-link" href="javascript:Load()">[Load]</a>--}}
+{{--                        <br>--}}
+{{--                        <div id="msg">Gia tri ban dau</div>--}}
+{{--                    </li>--}}
 
 
 

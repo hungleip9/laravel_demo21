@@ -137,6 +137,7 @@ class UserController
         return redirect(route('backend.user.index'));
     }
     public function showComment($id){
+
         $user = User::find($id);
         $comments = $user->comments;
         $numbers = $comments->count();
@@ -145,13 +146,16 @@ class UserController
             'numbers' => $numbers,
         ]);
     }
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         $user = User::find($id);
 
             $user->delete();
-            return redirect()->route('backend.user.index');
-
-
+        if (!$user->delete()){
+            $request->session()->flash('error','Xóa thành công');
+        }else{
+            $request->session()->flash('success','Xóa không thành công');
+        }
+            return back();
     }
 }

@@ -73,7 +73,7 @@ Route::group([
         Route::get('{id}/showProduct','UserController@showProduct')->name('backend.user.showProduct');
         Route::get('{id}/edit','UserController@edit')->name('backend.user.edit');
         Route::put('{id}/upload','UserController@upload')->name('backend.user.upload');
-        Route::delete('{id}/destroy','UserController@destroy')->name('backend.user.destroy');
+        Route::delete('destroy/{id}','UserController@destroy')->name('backend.user.destroy');
     });
     //quan ly danh muc
     Route::group(['prefix' => 'categories'],function (){
@@ -141,6 +141,9 @@ Route::group([
 Route::get('/home/test',"HomeController@index");
 Route::get('/getInfo-facebook/{social}',"SocialController@getInfo")->name('getInfo.facebook');
 Route::get('/checkInfo-facebook/{social}',"SocialController@checkInfo")->name('checkInfo.facebook');
+Route::get('/test',function (){
+    return view('test');
+});
 
 
 

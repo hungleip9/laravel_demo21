@@ -69,6 +69,10 @@
 <script src="/backend/dist/js/form-validator.min.js"></script>
 <script src="/backend/dist/js/contact-form-script.js"></script>
 <script src="/backend/dist/js/custom.js"></script>
+<script src="/backend/dist/js/code.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 {{--format tiền tệ--}}
 <script src="/backend/dist/js/simple.money.format.js"></script>

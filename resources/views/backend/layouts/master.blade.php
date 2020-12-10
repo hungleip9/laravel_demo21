@@ -96,6 +96,55 @@
 <script type="text/javascript">
     $('.money').simpleMoneyFormat();
 </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script type="text/javascript">
+{{--    jQuery(document).ready(function($) {--}}
+{{--        // $(".deleteProduct").click(function(){--}}
+{{--        //     swal({--}}
+{{--        //         title: "Xóa 1 bản ghi user",--}}
+{{--        //         text: "Bạn có chắc muốn xóa không?",--}}
+{{--        //         type: "warning",--}}
+{{--        //         confirmButtonClass: 'btn-danger',--}}
+{{--        //         showCancelButton: true,--}}
+{{--        //         confirmButtonText: 'Ok',--}}
+{{--        //         closeOnConfirm: false,--}}
+{{--        //     },function (){--}}
+{{--        //             swal("Deleted!","Bạn đã xóa thành công.","success");--}}
+{{--        //     });--}}
+{{--        // });--}}
+{{--        $('.deleteProduct').on('click', function(e) {--}}
+{{--            const id = $(e.currentTarget).data('id');--}}
+{{--            Swal.fire({--}}
+{{--                title: 'Bạn có chắc chắn muốn xóa không ?',--}}
+{{--                text: "Dữ liệu bị xóa không thể phục hồi!",--}}
+{{--                icon: 'warning',--}}
+{{--                showCancelButton: true,--}}
+{{--                confirmButtonColor: '#3085d6',--}}
+{{--                cancelButtonColor: '#d33',--}}
+{{--                confirmButtonText: 'Đồng ý',--}}
+{{--                cancelButtonText: "Hủy",--}}
+{{--            }).then((result) => {--}}
+{{--                if (result.isConfirmed) {--}}
+{{--                    $.ajax({--}}
+{{--                        type: 'delete',--}}
+{{--                        url: '/admin/user/0' + id,--}}
+{{--                        success: function(res) {--}}
+{{--                            if (!res.error) {--}}
+{{--                                toastr.success('Xóa thành công');--}}
+{{--                                $('#user-datatable').DataTable().ajax.reload(null, false);--}}
+{{--                            } else {--}}
+{{--                                toastr.error('Xóa thất bại');--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    });--}}
+{{--                }--}}
+{{--            })--}}
+{{--        });--}}
+{{--    });--}}
+</script>
+
 {{--end format tiền tệ--}}
 </body>
 </html>
