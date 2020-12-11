@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dfd7d0b-0fb1-4d85-86c8-02ef42ecb85c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/backend/dist/js/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/include/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/include/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6dfd7d0b-0fb1-4d85-86c8-02ef42ecb85c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +139,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Shop_Online_Laravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -226,6 +216,7 @@
       <workItem from="1607418213054" duration="16401000" />
       <workItem from="1607435646752" duration="13134000" />
       <workItem from="1607580450622" duration="14899000" />
+      <workItem from="1607657907428" duration="314000" />
     </task>
     <servers />
   </component>
