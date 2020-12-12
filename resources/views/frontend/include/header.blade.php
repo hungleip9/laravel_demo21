@@ -107,10 +107,10 @@
                     </div>
                     </form>
                     @can('admin')
-                        <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Admin</a></li>
+                        <li class="nav-item active" style="height: 40px; padding-right: 70px;"><a class="nav-link" href="{{route('backend.user.index')}}">Admin</a></li>
                     @endcan
                         @can('big-boss')
-                            <li class="nav-item active"><a class="nav-link" href="{{route('backend.user.index')}}">Boss</a></li>
+                            <li class="nav-item active" style="height: 40px; padding-right: 70px;"><a class="nav-link" href="{{route('backend.user.index')}}">Boss</a></li>
                         @endcan
 
                     <li class="nav-item active"  style="height: 40px; padding-right: 70px;"><a class="nav-link" href="/">Trang Chủ</a></li>
@@ -126,9 +126,18 @@
                     </li>
                         <li class="dropdown"  style="height: 40px; padding-right: 70px;">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Danh Mục</a>
-                            <ul class="dropdown-menu" style="background: black; width: 50px;">
+                            <ul class="dropdown-menu" style="background: black; width: 50px;" id="menu">
                             @foreach($danhmucs as $danhmuc)
-                                <li><a href="#" style="color: yellow!important;">{{$danhmuc->name}}</a></li>
+                                <li class="sub-menu-cha">
+                                    <a href="#" style="color: yellow!important;">{{$danhmuc->name}}</a>
+                                    <ul class="sub-menu" style="background: black;">
+                                    @foreach($categories as $category)
+                                        @if($category->parent_id == $danhmuc->id)
+                                                <li class="menu_item_children"><a href="#" style="color: yellow!important;">{{$category->name}}</a></li>
+                                        @endif
+                                    @endforeach
+                                    </ul>
+                                </li>
                                 @endforeach
                             </ul>
                         </li>

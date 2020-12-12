@@ -1,11 +1,13 @@
 <?php
 
+// namespace Database\Seeds;
+
 use Illuminate\Database\Seeder;
 
-class DatabaseTableSeeder extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Seed the application's database.
      *
      * @return void
      */
@@ -14,7 +16,7 @@ class DatabaseTableSeeder extends Seeder
         $this->call([
             CategoriesTableSeeder::class,
             ProductsTableSeeder::class,
-            UsersTableSeeder::class
+            UsersTableSeeder::class,
         ]);
     }
 }

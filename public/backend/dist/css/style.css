@@ -2691,6 +2691,20 @@ a.danhmuc{
 .navbar-brand img{
     height: 100px !important;
 }
+#menu li{
+    position: relative;
+}
+#menu li> .sub-menu{
+    display: none;
+}
+#menu li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 150px;
+    width: 170px;
+}
+
 
 
 

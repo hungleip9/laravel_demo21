@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCartRequest;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Order;
@@ -35,7 +36,7 @@ class CartController extends Controller
             'user_info' => $user_info,
         ]);
     }
-    public function store(Request $request){
+    public function store(StoreCartRequest $request){
 //        dd($request->product_id);
         //luu thong tin user
         $user = Auth::user();

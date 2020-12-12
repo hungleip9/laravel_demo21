@@ -50,19 +50,32 @@
                                     <input type="text" class="form-control" id="" name="name" value="{{$user_info->name}}">
                                 </div>
                             </div>
+                            @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="email">Email *</label>
                                 <input type="email" class="form-control" id="" name="email" value="{{$user_info->email}}">
 
                             </div>
+                            @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="address">Địa chỉ *</label>
                                 <input type="text" class="form-control" id="" name="address" value="{{$user_info->address}}">
 
                             </div>
+                            @error('address')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="address2">Phone *</label>
-                                <input type="text" class="form-control" id="" name="phone" value="{{$user_info->phone}}"> </div>
+                                <input type="text" class="form-control" id="" name="phone" value="{{$user_info->phone}}">
+                            </div>
+                            @error('phone')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="col-12 shopping-box"><button class="ml-auto btn hvr-hover" style="color: yellow!important;">Đặt hàng</button></div>
                         </form>
                     </div>

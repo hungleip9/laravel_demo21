@@ -82,17 +82,14 @@
                                         <a href="{{route('backend.user.edit',$user->id)}}" class="btn btn-success">Chỉnh sửa</a>
                                     </td>
                                     <td>
-{{--                                        <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">--}}
-{{--                                            {{ csrf_field() }}--}}
-{{--                                            {{ method_field('DELETE') }}--}}
+                                        <form action="{{route('backend.user.destroy',$user->id)}}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
 
-{{--                                            <button type="submit" class="btn btn-danger">--}}
-{{--                                                <i class="fa fa-btn fa-trash"></i> Xoá--}}
-{{--                                            </button>--}}
-{{--                                        </form>--}}
-                                        <button data-url="{{route('backend.user.destroy',$user->id)}}" type="button" class="btn btn-danger btn-delete">
-                                            <i class="fa fa-btn fa-trash"></i> Xoá
-                                        </button>
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fa fa-btn fa-trash"></i> Xoá
+                                            </button>
+                                        </form>
                                     </td>
 
                                 @endif

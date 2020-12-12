@@ -147,10 +147,5 @@ Route::get('/test',function (){
 
 
 
-
-
-
-
-
 Auth::routes();
 

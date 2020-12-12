@@ -86,9 +86,6 @@
                 <a href="{{url('getInfo-facebook/facebook')}}" class="btn btn-block btn-primary">
                     <i class="fab fa-facebook mr-2"></i> Đăng nhập với Facebook
                 </a>
-                <a href="#" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i> Đăng nhập với Google+
-                </a>
             </div>
             <!-- /.social-auth-links -->
 
@@ -96,7 +93,7 @@
                 <a href="forgot-password.html">Lấy lại mật khẩu</a>
             </p>
             <p class="mb-0">
-                <a href="register.html" class="text-center">Đăng ký thành viên mới</a>
+                <a href="/register" class="text-center">Đăng ký thành viên mới</a>
             </p>
         </div>
         <!-- /.login-card-body -->

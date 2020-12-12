@@ -45,6 +45,8 @@ class UserController
         // Lấy dữ liệu từ Form
         $name = $request->get('name');
         $email = $request->get('email');
+        $phone = $request->get('phone');
+        $address = $request->get('address');
         $password = $request->get('password');
 
 
@@ -52,6 +54,8 @@ class UserController
         // Tạo dữ liệu mới
         $user = new User();
         $user->name = $name;
+        $user->phone = $phone;
+        $user->address = $address;
         $user->role = 2;
         $user->email = $email;
         $user->password = $password;

@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $danhmucs = Category::where('parent_id','-1')->get();
+        $categories = Category::all();
         $products = Product::orderBy('updated_at','desc')->paginate(8);
         $prs = Product::orderBy('like','desc')->paginate(3);
         $images = Image::all();
@@ -38,8 +39,9 @@ class AppServiceProvider extends ServiceProvider
             'danhmucs' => $danhmucs,
             'products' => $products,
             'prs' => $prs,
-
             'images' => $images,
+            'categories'=> $categories,
+
         ]);
     }
 }
