@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,7 +13,7 @@ class OrderController extends Controller
     public function index(){
         $orders = Order::paginate(5);
         return view('backend.orders.index',[
-            'orders' => $orders
+            'orders' => $orders,
         ]);
     }
 //    public function store($user_id,$product_id){
@@ -27,6 +28,19 @@ class OrderController extends Controller
             'products' => $products
         ]);
     }
+    public function acOrder($id){
+        $order = Order::find($id);
+        $order->status = 1;
+        $order->save();
+        return back();
+    }
+    public function NotAcOrder($id){
+        $order = Order::find($id);
+        $order->status = 0;
+        $order->save();
+        return back();
+    }
+
     public function destroy(Request $request,$id){
         $order = Order::find($id);
         $order->delete();

@@ -36,7 +36,6 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Show Product</th>
                                 <th>User_id</th>
                                 <th>Product_id</th>
                                 <th>Money</th>
@@ -49,12 +48,20 @@
                             @foreach($orders as $order)
                             <tr>
 
-                                <td>{{$order->id}}</td>
-                                <td><a href="{{route('order.showProducts',$order->id)}}" class="btn btn-primary">Show</a></td>
+
+                                @if($order->status == 1)
+                                    <td>{{$order->id}} <i class="fa fa-check-circle" aria-hidden="true" style="color: blue;"></i></td>
+                                    @else
+                                    <td>{{$order->id}}</td>
+                                @endif
                                 <td>{{$order->user_id}}</td>
                                 <td>{{$order->product_id}}</td>
-                                <td>{{$order->money}}</td>
-                                <td><a href="" class="btn btn-success">Duyệt</a></td>
+                                <td>{{$order->money}}.000</td>
+                                @if($order->status == 0)
+                                <td><a href="{{route('order.acOrder',$order->id)}}" class="btn btn-success">Duyệt</a></td>
+                                @elseif($order->status == 1)
+                                <td><a href="{{route('order.NotAcOrder',$order->id)}}" class="btn btn-danger">Bỏ duyệt</a></td>
+                                @endif
                                 <td>
                                     <form action="{{route('order.destroy',$order->id)}}" method="POST">
                                         {{ csrf_field() }}

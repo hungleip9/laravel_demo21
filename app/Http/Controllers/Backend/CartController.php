@@ -53,9 +53,12 @@ class CartController extends Controller
         }
         //save
         $user->save();
-        return redirect(route('backend.cart.sendMail'));
-
-
+        if(true){
+            $request->session()->flash('success','Đơn hàng của quánh khách đang được xử lý, mời kiểm tra Email');
+        }else{
+            $request->session()->flash('error','Thất bại');
+        }
+        return redirect(route('frontend.cart.index'));
     }
     public function sendMail(Request $request){
         $user = Auth::user();

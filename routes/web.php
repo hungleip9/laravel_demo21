@@ -10,6 +10,10 @@ Route::get('/home', 'HomeController@index');
 Route::prefix('order')->group(function (){
     Route::get('{id}/showProducts',
         [\App\Http\Controllers\Backend\OrderController::class,'showProducts'])->name('order.showProducts');
+    Route::get('{id}/acOrder',
+        [\App\Http\Controllers\Backend\OrderController::class,'acOrder'])->name('order.acOrder');
+    Route::get('{id}/NotAcOrder',
+        [\App\Http\Controllers\Backend\OrderController::class,'NotAcOrder'])->name('order.NotAcOrder');
     Route::delete('{id}/destroy',
         [\App\Http\Controllers\Backend\OrderController::class,'destroy'])->name('order.destroy');
     Route::get('/',
