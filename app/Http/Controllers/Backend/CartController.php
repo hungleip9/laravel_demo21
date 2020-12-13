@@ -46,7 +46,7 @@ class CartController extends Controller
         $order = new Order();
         $items = Cart::content();
         $order->user_id = $user->id;
-        $order->money =\Gloudemans\Shoppingcart\Facades\Cart::total();
+        $order->money =(int)Cart::total();
         foreach ($items as $item){
             $order->product_id = $item->id;
             $order->save();
