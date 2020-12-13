@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $danhmucs = Category::where('parent_id','-1')->get();
         $categories = Category::all();
-        $products = Product::orderBy('updated_at','desc')->paginate(8);
+        $products = Product::orderBy('updated_at','desc')->paginate(20);
         $prs = Product::orderBy('like','desc')->paginate(3);
         $imagess = Image::all();
         //header backend
