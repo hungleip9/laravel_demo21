@@ -24,9 +24,7 @@ class StoreProductRequest extends FormRequest
             'origin_price'    => ['required', 'min:1', 'max:20'],
             'sale_price'      => [ 'max:20'],
             'content'         => ['required', 'min:10', 'max:100'],
-            'image'          => ['max:3025'],
-            'images'          => ['max:3025'],
-            'status'          => ['required','in:-1,0,1'],
+            'status'          => ['required'],
         //end validate
         ];
     }
@@ -47,8 +45,6 @@ class StoreProductRequest extends FormRequest
           'origin_price' => 'Giá gốc',
           'sale_price' => 'Giá khuyến mãi',
           'content' => 'Nội dung',
-          'images' => 'Ảnh mô tả',
-          'image' => 'avatar',
           'status' => 'tên sản phẩm',
         ];
     }
