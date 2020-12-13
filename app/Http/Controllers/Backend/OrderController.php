@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function index(){
-        $orders = Order::paginate(5);
+        $orders = Order::orderBy('updated_at','desc')->paginate(5);
         return view('backend.orders.index',[
             'orders' => $orders,
         ]);
