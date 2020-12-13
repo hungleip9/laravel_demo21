@@ -117,9 +117,9 @@
                                 <label>Trạng thái sản phẩm</label>
                                 <select name="status" class="form-control select2" style="width: 100%;">
 
-                                    <option @if($product->status == 0) value="0" selected @endif>Đang nhập</option>
-                                    <option @if($product->status == 1) value="1" selected @endif>Mở bán</option>
-                                    <option @if($product->status == -1) value="-1" selected @endif>Hết hàng</option>
+                                    <option value="0" @if($product->status == 0) selected @endif>Đang nhập</option>
+                                    <option value="1" @if($product->status == 1) selected @endif>Mở bán</option>
+                                    <option value="-1" @if($product->status == -1) selected @endif>Hết hàng</option>
                                 </select>
                                 @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
