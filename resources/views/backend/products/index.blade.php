@@ -49,7 +49,7 @@
                             @foreach($products as $product)
                             <tr style="text-align: center;">
                                 <td>{{$product->id}}</td>
-                                <td>{{$product->name}}</td>
+                                <td><a href="{{route('frontend.product.detail',$product->id)}}">{{$product->name}}</a></td>
                                 <td>{{$product->category->name}}</td>
                                 <td><a href="{{route('backend.product.showComment',$product->id)}}" class="btn btn-primary">Show</a></td>
                                 <td>

@@ -24,10 +24,9 @@ use Illuminate\Support\Facades\Validator;
 class ProductController extends Controller
 {
     public function detail($id){
-        $products = Product::all();
         $product = Product::find($id);
+        $products = Product::where('category_id',$product->category_id)->get();
         $images = $product->image;
-        $categories = Category::all();
 
         // Cache user number
         $cart_number = Cache::remember('cart_number',5,function (){
@@ -38,7 +37,6 @@ class ProductController extends Controller
         return view('frontend.shop-detail',[
             'products' => $products,
             'product' => $product,
-            'categories' => $categories,
             'images' => $images,
             'cart_number' => $cart_number,
 

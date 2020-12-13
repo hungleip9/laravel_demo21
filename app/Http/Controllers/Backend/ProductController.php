@@ -81,6 +81,7 @@ class ProductController extends Controller
         $product->user_id = Auth::user()->id;
 
         $product->save();
+
         //images
         if ($request->hasFile('images')){
             $files = $request->file('images');
@@ -95,9 +96,9 @@ class ProductController extends Controller
                 $image->product_id = $product->id;
                 $image->save();
             }
-
         }
         //end image
+
         //session
         if ($product->save()){
             $request->session()->flash('success','Tao mới thành công');
@@ -155,18 +156,22 @@ class ProductController extends Controller
         $product->save();
         //images
         if ($request->hasFile('images')){
+            $images = $product->image;
+            foreach ($images as $img){
+                $img->delete();
+            }
             $files = $request->file('images');
             foreach ($files as $file){
                 //cach 1 khuyen dung
                 $path = Storage::disk('public')
                     ->putFileAs('image', $file,$file->getClientOriginalName());
-
                 $image = new Image();
                 $image->name = $file->getClientOriginalName();
                 $image->path =$path;
-                $image->product_id = $product->id;
+                $image->product_id = $id;
                 $image->save();
             }
+
 
         }
         //end image
@@ -181,6 +186,14 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        //images
+        if (!empty($product->image)){
+            $images = $product->image;
+            foreach ($images as $image){
+                $image->delete();
+            }
+        }
+        //end image
         $product->delete();
         return redirect()->route('backend.product.index');
     }

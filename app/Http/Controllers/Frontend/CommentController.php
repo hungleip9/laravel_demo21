@@ -38,7 +38,19 @@ class CommentController extends Controller
         }else{
             $request->session()->flash('error','Cập nhật không thành công!');
         }
-       return redirect(route('backend.product.showComment',$comments->product_id));
+       return back();
+
+    }
+    public function notAcComment(Request $request,$id){
+        $comments = Comment::find($id);
+        $comments->status = 0;
+        $comments->save();
+        if($comments->save()){
+            $request->session()->flash('success','Cập nhật thành công!');
+        }else{
+            $request->session()->flash('error','Cập nhật không thành công!');
+        }
+        return back();
 
     }
     public function destroy($id)

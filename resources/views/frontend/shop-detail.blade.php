@@ -138,8 +138,42 @@
                 </div>
                 {{--end binh  luan--}}
             @endif
-
+            <div class="row my-5">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1 style="color: black!important;">Các sản phẩm liên quan</h1>
+                        <p style="color: black!important;">Các món ăn khác được yêu thích tại onii chan shop có thể bạn sẽ thích</p>
+                    </div>
+                    <div class="featured-products-box owl-carousel owl-theme">
+                        @foreach($products as $pr)
+                        <div class="item">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <img src="/storage/{{$pr->avatar}}" class="img-fluid" alt="Image" style="height: 200px!important;">
+                                    <div class="mask-icon">
+                                        <ul>
+                                            <li><a href="{{route('frontend.product.detail',$pr->id)}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                            <li><a href="{{route('frontend.product.like',$pr->id)}}" data-toggle="tooltip" data-placement="right" title="Like"><i class="far fa-heart"></i></a></li>
+                                        </ul>
+                                        <a class="cart" href="{{route('frontend.cart.add',$pr->id)}}">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    <h4>{{$pr->name}}</h4>
+                                    @if(!empty($pr->sale_price))
+                                        <h5>{{$pr->sale_price}}</h5>
+                                    @else
+                                    <h5>{{$pr->origin_price}}</h5>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        </div>
+
     <!-- End Cart -->
 @endsection

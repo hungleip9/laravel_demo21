@@ -113,6 +113,7 @@ Route::group([
         Route::get('/','CommentController@index')->name('frontend.comments.index');
         Route::post('postcomment/{id}','CommentController@postcomment')->name('frontend.comments.postcomment');
         Route::get('acComment/{id}','CommentController@acComment')->name('frontend.comments.acComment');
+        Route::get('notAcComment/{id}','CommentController@notAcComment')->name('frontend.comments.notAcComment');
         Route::delete('destroy/{id}','CommentController@destroy')->name('frontend.comments.destroy');
 
     });

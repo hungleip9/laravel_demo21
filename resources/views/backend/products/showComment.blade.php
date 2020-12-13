@@ -61,7 +61,11 @@
                                         <td>{{$comment->comment}} <i class="fa fa-check-circle" aria-hidden="true" style="color: blue;"></i></td>
                                     @endif
                                     <td>
+                                        @if($comment->status == 0)
                                         <a href="{{route('frontend.comments.acComment',$comment->id)}}" class="btn btn-success">Duyệt</a>
+                                        @elseif($comment->status == 1)
+                                        <a href="{{route('frontend.comments.notAcComment',$comment->id)}}" class="btn btn-danger">Bỏ Duyệt</a>
+                                        @endif
 
                                     </td>
                                     <td><form action="{{route('frontend.comments.destroy',$comment->id)}}" method="POST">
