@@ -48,9 +48,13 @@ class ProductController extends Controller
         $product = Product::find($id);
         $comments = $product->comments;
         $numbers = $comments->count();
+            foreach ($comments as $comment){
+                $user = User::find($comment->user_id);
+            }
         return view('backend.products.showComment',[
             'comments' => $comments,
             'numbers' => $numbers,
+            'user' => $user,
         ]);
     }
     public function create(){

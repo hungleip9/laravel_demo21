@@ -4,7 +4,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Order</h1>
+                <h1 class="m-0 text-dark">Đơn hàng</h1>
+                {{--                bao loi session--}}
+                @if(session()->has('success'))
+                    <span style="color: white;background-color: green;">{{session()->get('success')}}</span>
+                @else
+                    <span style="color: white;background-color: red;">{{session()->get('error')}}</span>
+                @endif
+                {{--                ket thuc bao loi session--}}
             </div><!-- /.col -->
             <div class="col-sm-6">
 
@@ -33,6 +40,8 @@
                                 <th>User_id</th>
                                 <th>Product_id</th>
                                 <th>Money</th>
+                                <th>Xử lý</th>
+                                <th>Xóa</th>
 
                             </tr>
                             </thead>
@@ -45,6 +54,17 @@
                                 <td>{{$order->user_id}}</td>
                                 <td>{{$order->product_id}}</td>
                                 <td>{{$order->money}}</td>
+                                <td><a href="" class="btn btn-success">Duyệt</a></td>
+                                <td>
+                                    <form action="{{route('order.destroy',$order->id)}}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-btn fa-trash"></i> Xoá
+                                        </button>
+                                    </form>
+                                </td>
 
 
 

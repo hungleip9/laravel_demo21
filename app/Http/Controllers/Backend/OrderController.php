@@ -27,4 +27,14 @@ class OrderController extends Controller
             'products' => $products
         ]);
     }
+    public function destroy(Request $request,$id){
+        $order = Order::find($id);
+        $order->delete();
+        if (!$order->delete()){
+            $request->session()->flash('error','Xóa thành công');
+        }else{
+            $request->session()->flash('success','Xóa không thành công');
+        }
+        return back();
+    }
 }

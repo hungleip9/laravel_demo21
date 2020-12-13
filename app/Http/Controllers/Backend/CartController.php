@@ -53,7 +53,7 @@ class CartController extends Controller
         }
         //save
         $user->save();
-        return back();
+        return redirect(route('backend.cart.sendMail'));
 
 
     }

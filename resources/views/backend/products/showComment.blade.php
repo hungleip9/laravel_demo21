@@ -38,7 +38,7 @@
                             <thead>
                             <tr style="text-align: center;">
                                 <th>ID</th>
-                                <th>User_id</th>
+                                <th>User_name</th>
                                 <th>Product_id</th>
                                 <th>Comments</th>
                                 <th>Duyệt</th>
@@ -53,7 +53,7 @@
                                 <tr style="text-align: center;">
 
                                         <td>{{$comment->id}}</td>
-                                        <td>{{$comment->user_id}}</td>
+                                        <td>{{$user->name}}</td>
                                         <td>{{$comment->product_id}}</td>
                                     @if($comment->status == 0)
                                         <td>{{$comment->comment}}</td>
@@ -64,7 +64,7 @@
                                         @if($comment->status == 0)
                                         <a href="{{route('frontend.comments.acComment',$comment->id)}}" class="btn btn-success">Duyệt</a>
                                         @elseif($comment->status == 1)
-                                        <a href="{{route('frontend.comments.notAcComment',$comment->id)}}" class="btn btn-danger">Bỏ Duyệt</a>
+                                        <a href="{{route('frontend.comments.notAcComment',$comment->id)}}" class="btn btn-info">Bỏ Duyệt</a>
                                         @endif
 
                                     </td>

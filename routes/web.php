@@ -10,6 +10,8 @@ Route::get('/home', 'HomeController@index');
 Route::prefix('order')->group(function (){
     Route::get('{id}/showProducts',
         [\App\Http\Controllers\Backend\OrderController::class,'showProducts'])->name('order.showProducts');
+    Route::delete('{id}/destroy',
+        [\App\Http\Controllers\Backend\OrderController::class,'destroy'])->name('order.destroy');
     Route::get('/',
         [\App\Http\Controllers\Backend\OrderController::class,'index'])->name('order.index');
 });
