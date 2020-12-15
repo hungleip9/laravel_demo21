@@ -28,8 +28,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <style>
         .hienthi2 img{
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: auto;
         }
     </style>
 </head>

@@ -97,12 +97,13 @@
                                 @error('image')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+                                <img style="width: 100px;height: auto" id="xemtruoc" />
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">Hình ảnh mô tả</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile" name="images[]" multiple>
+                                        <input type="file" class="custom-file-input" id="nhieuanh" name="images[]" multiple>
                                         <label class="custom-file-label" for="exampleInputFile">Upload ảnh</label>
                                     </div>
                                     <div class="input-group-append">
@@ -112,6 +113,7 @@
                                 @error('images')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
+                                <div class="hienthi2"></div>
                             </div>
                             <div class="form-group">
                                 <label>Trạng thái sản phẩm</label>
