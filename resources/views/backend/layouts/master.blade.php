@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="/backend/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        .hienthi2 img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -100,5 +106,64 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 {{--end format tiền tệ--}}
+{{--xem truoc anh upload--}}
+
+<script type="text/javascript">
+
+    function readURL(anh) {
+
+        if (anh.files && anh.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#xemtruoc').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(anh.files[0]);
+        }
+    }
+
+    $("#exampleInputFile").change(function() {
+        readURL(this);
+    });
+
+
+
+</script>
+
+{{--end--}}
+
+{{--xem nhieu anh truoc khi up load--}}
+
+<script type="text/javascript">
+
+    $(function() {
+        // Multiple images preview in browser
+        var imagesPreview = function(input, placeToInsertImagePreview) {
+
+            if (input.files) {
+                var filesAmount = input.files.length;
+
+                for (i = 0; i < filesAmount; i++) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                    }
+
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+
+        };
+
+        $('#nhieuanh').on('change', function() {
+            imagesPreview(this, 'div.hienthi2');
+        });
+    });
+
+</script>
+
+{{--end--}}
 </body>
 </html>

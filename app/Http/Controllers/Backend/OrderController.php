@@ -32,7 +32,7 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->status = 1;
         $order->save();
-        return back();
+        return redirect(route('backend.cart.sendMail'));
     }
     public function NotAcOrder($id){
         $order = Order::find($id);

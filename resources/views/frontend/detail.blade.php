@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Onii Chan</h1>
-                        <p>Danh sách các món {{$product->category->name}}</p>
+                        <p>Danh sách các món <span style="color: red;">{{$category->name}}</span></p>
                     </div>
                 </div>
             </div>
@@ -14,8 +14,7 @@
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">Tất Cả</button>
-                            <button data-filter=".best-seller">Giảm Giá</button>
+
                         </div>
                     </div>
                 </div>

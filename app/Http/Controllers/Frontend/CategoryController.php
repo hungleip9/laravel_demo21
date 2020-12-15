@@ -27,7 +27,7 @@ class CategoryController extends Controller
             return $cart_number;
         });
         // end Cache user number
-        return view('frontend.category-detail',[
+        return view('frontend.detail',[
             'categories' => $categories,
             'category' => $category,
             'images' => $images,

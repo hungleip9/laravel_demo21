@@ -129,11 +129,11 @@
                             <ul class="dropdown-menu" style="background: black; width: 50px;" id="menu">
                             @foreach($danhmucs as $danhmuc)
                                 <li class="sub-menu-cha">
-                                    <a href="#" style="color: yellow!important;">{{$danhmuc->name}}</a>
+                                    <a href="{{route('frontend.categories.detail',$danhmuc->id)}}" style="color: yellow!important;">{{$danhmuc->name}}</a>
                                     <ul class="sub-menu" style="background: black;">
                                     @foreach($categories as $category)
                                         @if($category->parent_id == $danhmuc->id)
-                                                <li class="menu_item_children"><a href="#" style="color: yellow!important;">{{$category->name}}</a></li>
+                                                <li class="menu_item_children"><a href="{{route('frontend.categories.detail',$category->id)}}" style="color: yellow!important;">{{$category->name}}</a></li>
                                         @endif
                                     @endforeach
                                     </ul>

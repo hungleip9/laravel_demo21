@@ -27,7 +27,7 @@
 								</a>
                                     </td>
                                     <td class="name-pr">
-                                        <a href="#">
+                                        <a href="{{route('frontend.product.detail',$item->id)}}" style="color: blue!important;">
 									{{$item->name}}
 								</a>
                                     </td>

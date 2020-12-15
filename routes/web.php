@@ -111,7 +111,7 @@ Route::group([
     });
     //quan ly danh muc
     Route::group(['prefix' => 'categories'],function (){
-        Route::get('detail/{id}','CategoryController@detail')->name('backend.categories.detail');
+        Route::get('detail/{id}','CategoryController@detail')->name('frontend.categories.detail');
     });
 
     //quan ly comment

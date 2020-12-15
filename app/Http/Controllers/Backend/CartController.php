@@ -76,10 +76,10 @@ class CartController extends Controller
             $massage->subject('Cảm ơn bạn đã đặt hàng tại OniiChan-Shop');
         });
         if(true){
-            $request->session()->flash('success','Đơn hàng của quánh khách đang được xử lý, mời kiểm tra Email');
+            $request->session()->flash('success','Đơn hàng đã được duyến, đang gửi thông tin đơn hàng cho khách hàng');
         }else{
             $request->session()->flash('error','Thất bại');
         }
-        return redirect(route('frontend.cart.index'));
+        return back();
     }
 }
